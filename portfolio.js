@@ -21,7 +21,7 @@ window.addEventListener(
   { passive: true }
 );
 
-/* ── Scroll reveal ── */
+/* ── Scroll reveal (Seu Observer Original) ── */
 const ro = new IntersectionObserver(
   (entries) => {
     entries.forEach((e, i) => {
@@ -43,7 +43,9 @@ const so = new IntersectionObserver(
       if (e.isIntersecting) {
         e.target.querySelectorAll('.skill-bar-fill').forEach((b) => {
           setTimeout(() => {
-            b.style.width = b.dataset.width + '%';
+            // Correção para ler o estilo inline que adicionamos ou o data-width original
+            const targetWidth = b.dataset.width || b.style.width.replace('%', '');
+            b.style.width = targetWidth + '%';
           }, 150);
         });
         so.unobserve(e.target);
@@ -72,3 +74,70 @@ window.addEventListener(
   { passive: true }
 );
 
+/* ══════════════════════════════════════════════
+     NOVOS EFEITOS ADICIONADOS (DIGITAÇÃO & REVEAL)
+   ══════════════════════════════════════════════ */
+
+// Efeito de Digitação (Typing Effect)
+const words = ["de verdade.", "o seu negócio.", "Web & iOS.", "o Futuro."];
+let wordIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+const typingDelay = 150;
+const erasingDelay = 75;
+const newWordDelay = 2000;
+const typingTextElement = document.getElementById("typing-text");
+
+function type() {
+  if (!typingTextElement) return;
+  const currentWord = words[wordIndex];
+  
+  if (isDeleting) {
+    typingTextElement.textContent = currentWord.substring(0, charIndex - 1);
+    charIndex--;
+  } else {
+    typingTextElement.textContent = currentWord.substring(0, charIndex + 1);
+    charIndex++;
+  }
+
+  if (!isDeleting && charIndex === currentWord.length) {
+    isDeleting = true;
+    setTimeout(type, newWordDelay);
+  } else if (isDeleting && charIndex === 0) {
+    isDeleting = false;
+    wordIndex = (wordIndex + 1) % words.length;
+    setTimeout(type, 500);
+  } else {
+    setTimeout(type, isDeleting ? erasingDelay : typingDelay);
+  }
+}
+
+// Inicializa os efeitos novos assim que o DOM estiver pronto
+document.addEventListener("DOMContentLoaded", () => {
+  // Inicia a digitação
+  if (typingTextElement) setTimeout(type, 500);
+  
+  // Configura o ScrollReveal externo para os textos principais da Hero
+  if (typeof ScrollReveal !== 'undefined') {
+    window.sr = ScrollReveal({ 
+      reset: false,
+      distance: '40px',
+      duration: 1000,
+      delay: 100
+    });
+
+    sr.reveal('.hero-heading', { origin: 'top' });
+    sr.reveal('.hero-desc', { origin: 'bottom', delay: 200 });
+    sr.reveal('.hero-actions', { origin: 'bottom', delay: 300 });
+  }
+
+  // Inicializa o efeito 3D nos cards caso a biblioteca tenha carregado com sucesso
+  if (typeof VanillaTilt !== 'undefined') {
+    VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
+      max: 12,
+      speed: 400,
+      glare: true,
+      "max-glare": 0.15,
+    });
+  }
+});
