@@ -6,7 +6,7 @@
 document.addEventListener('DOMContentLoaded', function () {
 
   /* ─────────────────────────────
-     CURSOR CUSTOMIZADO
+      CURSOR CUSTOMIZADO
   ───────────────────────────── */
   const cur  = document.getElementById('cur');
   const ring = document.getElementById('cur-ring');
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   /* ─────────────────────────────
-     NAV — SCROLL STICKY
+      NAV — SCROLL STICKY
   ───────────────────────────── */
   var nav = document.getElementById('nav');
 
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   /* ─────────────────────────────
-     NAV — LINK ATIVO
+      NAV — LINK ATIVO
   ───────────────────────────── */
   var sections = document.querySelectorAll('section[id]');
   var navLinks = document.querySelectorAll('.nav-links a');
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   /* ─────────────────────────────
-     SCROLL REVEAL
+      SCROLL REVEAL
   ───────────────────────────── */
   var revealObserver = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   /* ─────────────────────────────
-     SKILL BARS — ANIMAÇÃO AO SCROLL
+      SKILL BARS — ANIMAÇÃO AO SCROLL
   ───────────────────────────── */
   var skillObserver = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
@@ -123,5 +123,46 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('.sk-grid').forEach(function (el) {
     skillObserver.observe(el);
   });
+
+
+  /* ─────────────────────────────
+      ENVIO DO FORMULÁRIO (GOOGLE APPS SCRIPT)
+  ───────────────────────────── */
+  const contactForm = document.getElementById('contact-form');
+  
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(event) {
+      event.preventDefault(); // Impede a página de recarregar
+
+      // URL gerada na implantação do Google Apps Script
+      const urlGoogleScript = "https://script.google.com/macros/s/AKfycbwN-zFlL0hW4pSOD88aGbFYLBOiS5CUeozCXf9GunbK5yIfa1sPzO2W6z1jVBQt941v/exec";
+
+      // Captura os dados mapeando direto pelos IDs ou Names dos inputs
+      const dadosFormulario = {
+        nome: contactForm.querySelector('[name="nome"]')?.value || contactForm.querySelector('#nome')?.value || '',
+        email: contactForm.querySelector('[name="email"]')?.value || contactForm.querySelector('#email')?.value || '',
+        assunto: contactForm.querySelector('[name="assunto"]')?.value || contactForm.querySelector('#assunto')?.value || '',
+        mensagem: contactForm.querySelector('[name="mensagem"]')?.value || contactForm.querySelector('#mensagem')?.value || ''
+      };
+
+      // Envia os dados para o Google Script via POST
+      fetch(urlGoogleScript, {
+        method: "POST",
+        mode: "no-cors", 
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(dadosFormulario)
+      })
+      .then(() => {
+        alert('Mensagem enviada com sucesso direto para o meu Gmail!');
+        contactForm.reset(); // Limpa o formulário
+      })
+      .catch(error => {
+        alert('Ops, erro ao enviar a mensagem.');
+        console.error('Erro:', error);
+      });
+    });
+  }
 
 });
