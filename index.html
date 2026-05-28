@@ -1,15 +1,13 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- ✏️ Editar: título da aba do navegador -->
-<title>Pedro Henrique Zanatta — Desenvolvedor</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="portfolio.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedro Henrique Zanatta — Desenvolvedor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css"> <!-- Certifique-se de que o nome está igual ao seu arquivo CSS -->
 </head>
 <body>
 
@@ -20,7 +18,6 @@
 ═══════════════════════════════ -->
 <nav id="nav">
   <div class="nav-inner">
-    <!-- ✏️ Editar: seu nome/slug no logo -->
     <a href="#home" class="nav-logo">/<em>Pedro Henrique Zanatta</em>/</a>
 
     <ul class="nav-links">
@@ -31,10 +28,9 @@
       <li><a href="#contact">Contato</a></li>
     </ul>
 
-    <!-- ✏️ Editar: status de disponibilidade -->
     <div class="nav-status">
       <span class="status-dot"></span>
-      Disponível
+      Disponível para Projetos
     </div>
   </div>
 </nav>
@@ -47,22 +43,18 @@
 
     <div class="hero-eyebrow">
       <span class="eyebrow-line"></span>
-      <!-- ✏️ Editar: cidade / especialidade -->
-      <span class="eyebrow-text">Criciúma,Santa Catarina, Brasil · Desenvolvedor</span>
+      <span class="eyebrow-text">Criciúma, Santa Catarina, Brasil · Developer</span>
     </div>
 
-    <!-- ✏️ Editar: título principal -->
+    <!-- Título principal com o ID para o efeito de digitação -->
     <h1 class="hero-heading">
       Criando sistemas<br>
       <em>que funcionam</em><br>
-      de verdade.
+      para <span id="typing-text" style="color: #ffffff; border-right: 2px solid var(--accent); padding-right: 5px;"></span>
     </h1>
 
-    <!-- ✏️ Editar: descrição curta -->
     <p class="hero-desc">
-      Sou estudante do 2º ano do Técnico em Informática no CEDUP Abílio Paulo (Criciúma/SC). Apaixonado por desenvolvimento Backend e criação de sistemas completos.
-
-      Tenho mais de 2 anos de experiência desenvolvendo soluções personalizadas, APIs robustas e cidades para servidores FiveM.
+      Sou estudante do Técnico em Informática no CEDUP Abílio Paulo. Apaixonado por desenvolvimento Backend e criação de sistemas completos. Tenho mais de 2 anos de experiência desenvolvendo soluções personalizadas, APIs robustas e ecossistemas digitais.
     </p>
 
     <div class="hero-actions">
@@ -76,7 +68,6 @@
     </div>
 
     <div class="hero-footer">
-      <!-- ✏️ Editar: seus números -->
       <div class="hero-stats">
         <div class="stat">
           <div class="stat-n">10+</div>
@@ -92,7 +83,6 @@
         </div>
       </div>
 
-      <!-- ✏️ Editar: seus links sociais -->
       <div class="hero-socials">
         <a href="https://github.com/ZanattaDev" class="social-a" target="_blank">
           <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
@@ -125,49 +115,40 @@
   <div class="wrap">
     <div class="section-label">Sobre mim</div>
 
-    <!--
-      ✏️ FOTO: Substitua o div .photo-placeholder-inner por:
-      <img src="sua-foto.jpg" alt="Seu Nome">
-    -->
     <div class="about-photo-row reveal">
-      <div class="about-photo-main">
+      <div class="about-photo-main" data-tilt>
         <div class="photo-placeholder-inner">
           <svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24">
             <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
           </svg>
-          <span>Adicione sua foto aqui<br><code style="font-size:0.65rem;opacity:0.5">&lt;img src="foto.jpg"&gt;</code></span>
+          <span>&lt;img src="foto.jpg"&gt;</span>
         </div>
       </div>
       <div class="about-photo-side">
-        <!-- ✏️ Editar: seus detalhes pessoais -->
-        <div class="about-card">
+        <div class="about-card" data-tilt>
           <div class="about-card-label">Educação</div>
           <div class="about-card-value">Técnico em Informática<br>CEDUP Abílio Paulo</div>
         </div>
-        <div class="about-card">
+        <div class="about-card" data-tilt>
           <div class="about-card-label">Localização</div>
           <div class="about-card-value">Criciúma, SC<br>Brasil</div>
         </div>
-        <div class="about-card">
+        <div class="about-card" data-tilt>
           <div class="about-card-label">Status</div>
-          <div class="about-card-value" style="color:var(--green)">Disponível para projetos</div>
+          <div class="about-card-value" style="color:#00ff88">Disponível para projetos</div>
         </div>
       </div>
     </div>
 
     <div class="about-text-block reveal">
-      <!-- ✏️ Editar: sua bio -->
       <div class="about-bio">
         <p>
-          Olá, sou Pedro Henrique Zanatta, Desenvolvedor Backend e iOS. Apaixonado por criar soluções completas — desde APIs robustas no backend até aplicativos iOS fluidos e bem projetados. Tenho mais de 2 anos de experiência desenvolvendo sistemas escaláveis e aplicativos mobile nativos, sempre buscando código limpo, alta performance e ótima experiência do usuário..
+          Olá, sou Pedro Henrique Zanatta, Desenvolvedor Backend e iOS. Apaixonado por criar soluções completas — desde APIs robustas no backend até aplicativos iOS fluidos e bem projetados. Tenho mais de 2 anos de experiência desenvolvendo sistemas escaláveis e aplicativos mobile nativos, sempre buscando código limpo, alta performance e ótima experiência do usuário.
         </p>
         <p>
-          Desenvolvimento de APIs robustas e escaláveis (Java, TypeScript, PHP, C#).
-          Criação de aplicativos iOS nativos com Swift e SwiftUI.
-          Integração entre backend e mobile (REST, GraphQL, WebSockets).
-          Foco em arquitetura limpa, performance e segurança.
+          Atuo no desenvolvimento de APIs robustas com linguagens de alto nível, integração em tempo real através de WebSockets e arquiteturas limpas que garantem a segurança e a performance máxima do software.
         </p>
-        <a href="SEU_CURRICULO.pdf" class="btn btn-ghost" style="margin-top:0.5rem" download>
+        <a href="#" class="btn btn-ghost" style="margin-top:0.5rem">
           Baixar currículo
           <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
             <path d="M12 5v14M5 12l7 7 7-7"/>
@@ -175,29 +156,13 @@
         </a>
       </div>
 
-      <!-- ✏️ Editar: seus dados -->
       <div>
         <div class="about-detail-list">
-          <div class="detail-row">
-            <span class="detail-key">Experiência</span>
-            <span class="detail-val">2+ anos</span>
-          </div>
-          <div class="detail-row">
-            <span class="detail-key">Foco atual</span>
-            <span class="detail-val">Full Stack e Apps</span>
-          </div>
-          <div class="detail-row">
-            <span class="detail-key">Idiomas</span>
-            <span class="detail-val">Português, Inglês</span>
-          </div>
-          <div class="detail-row">
-            <span class="detail-key">Disponibilidade</span>
-            <span class="detail-val">Freelance / CLT</span>
-          </div>
-          <div class="detail-row">
-            <span class="detail-key">Projetos</span>
-            <span class="detail-val">10+ concluídos</span>
-          </div>
+          <div class="detail-row"><span class="detail-key">Experiência</span><span class="detail-val">2+ anos</span></div>
+          <div class="detail-row"><span class="detail-key">Foco atual</span><span class="detail-val">Full Stack & Mobile</span></div>
+          <div class="detail-row"><span class="detail-key">Idiomas</span><span class="detail-val">Português, Inglês</span></div>
+          <div class="detail-row"><span class="detail-key">Disponibilidade</span><span class="detail-val">Freelance / Intern</span></div>
+          <div class="detail-row"><span class="detail-key">Projetos</span><span class="detail-val">10+ concluídos</span></div>
         </div>
       </div>
     </div>
@@ -214,128 +179,44 @@
     <h2 class="section-title">Kit de <em>ferramentas</em></h2>
     <p class="section-sub">Tecnologias que uso no dia a dia para construir produtos.</p>
 
-    <!--
-      ✏️ COMO EDITAR:
-      - Troque os nomes em .skill-row-name
-      - Ajuste data-width="XX" (0 a 100) para mudar a barra
-      - Adicione ou remova .skill-row conforme necessário
-    -->
     <div class="skills-grid reveal">
-
+      <!-- Grupo Front -->
       <div class="skill-group">
-        <div class="skill-group-title">Front-end</div>
+        <div class="skill-group-title">Front-end / iOS</div>
         <div class="skill-row">
           <span class="skill-row-name">HTML & CSS</span>
           <div style="display:flex;align-items:center;gap:0.75rem">
-            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90"></div></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 90%"></div></div>
             <span class="skill-row-pct">90%</span>
           </div>
         </div>
         <div class="skill-row">
-          <span class="skill-row-name">JavaScript</span>
+          <span class="skill-row-name">JavaScript / Swift</span>
           <div style="display:flex;align-items:center;gap:0.75rem">
-            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="80"></div></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 80%"></div></div>
             <span class="skill-row-pct">80%</span>
-          </div>
-        </div>
-        <div class="skill-row">
-          <span class="skill-row-name">React</span>
-          <div style="display:flex;align-items:center;gap:0.75rem">
-            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="70"></div></div>
-            <span class="skill-row-pct">70%</span>
-          </div>
-        </div>
-        <div class="skill-row">
-          <span class="skill-row-name">React Native</span>
-          <div style="display:flex;align-items:center;gap:0.75rem">
-            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="60"></div></div>
-            <span class="skill-row-pct">60%</span>
           </div>
         </div>
       </div>
 
+      <!-- Grupo Back -->
       <div class="skill-group">
         <div class="skill-group-title">Back-end</div>
         <div class="skill-row">
           <span class="skill-row-name">Python</span>
           <div style="display:flex;align-items:center;gap:0.75rem">
-            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="80"></div></div>
-            <span class="skill-row-pct">80%</span>
-          </div>
-        </div>
-        <div class="skill-row">
-          <span class="skill-row-name">PHP</span>
-          <div style="display:flex;align-items:center;gap:0.75rem">
-            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="70"></div></div>
-            <span class="skill-row-pct">70%</span>
-          </div>
-        </div>
-        <div class="skill-row">
-          <span class="skill-row-name">MySQL</span>
-          <div style="display:flex;align-items:center;gap:0.75rem">
-            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="75"></div></div>
-            <span class="skill-row-pct">75%</span>
-          </div>
-        </div>
-        <div class="skill-row">
-          <span class="skill-row-name">Node.js</span>
-          <div style="display:flex;align-items:center;gap:0.75rem">
-            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="65"></div></div>
-            <span class="skill-row-pct">65%</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="skill-group">
-        <div class="skill-group-title">Linguagens</div>
-        <div class="skill-row">
-          <span class="skill-row-name">C / C++</span>
-          <div style="display:flex;align-items:center;gap:0.75rem">
-            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="75"></div></div>
-            <span class="skill-row-pct">75%</span>
-          </div>
-        </div>
-        <div class="skill-row">
-          <span class="skill-row-name">C#</span>
-          <div style="display:flex;align-items:center;gap:0.75rem">
-            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="65"></div></div>
-            <span class="skill-row-pct">65%</span>
-          </div>
-        </div>
-        <div class="skill-row">
-          <span class="skill-row-name">Java</span>
-          <div style="display:flex;align-items:center;gap:0.75rem">
-            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="60"></div></div>
-            <span class="skill-row-pct">60%</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="skill-group">
-        <div class="skill-group-title">Ferramentas</div>
-        <div class="skill-row">
-          <span class="skill-row-name">Git & GitHub</span>
-          <div style="display:flex;align-items:center;gap:0.75rem">
-            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="85"></div></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 85%"></div></div>
             <span class="skill-row-pct">85%</span>
           </div>
         </div>
         <div class="skill-row">
-          <span class="skill-row-name">VS Code</span>
+          <span class="skill-row-name">Java (Spring Boot)</span>
           <div style="display:flex;align-items:center;gap:0.75rem">
-            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90"></div></div>
-            <span class="skill-row-pct">90%</span>
-          </div>
-        </div>
-        <div class="skill-row">
-          <span class="skill-row-name">Linux</span>
-          <div style="display:flex;align-items:center;gap:0.75rem">
-            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="70"></div></div>
-            <span class="skill-row-pct">70%</span>
+            <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 75%"></div></div>
+            <span class="skill-row-pct">75%</span>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -347,91 +228,44 @@
   <div class="wrap">
     <div class="section-label">Projetos</div>
     <h2 class="section-title">Trabalhos em <em>destaque</em></h2>
-    <p class="section-sub">Uma seleção do que já construí — cada um um desafio diferente.</p>
+    <p class="section-sub">Uma seleção do que já construí — direto no meu GitHub.</p>
 
-    <!--
-      ✏️ COMO EDITAR PROJETOS:
-      - Troque .project-name, .project-desc
-      - Edite ou remova .project-tag dentro de .project-tags
-      - Atualize o link href no onclick
-      - Adicione mais .project-item copiando o bloco
-    -->
     <div class="project-list reveal">
-
-      <div class="project-item" onclick="window.open('#','_blank')">
+      <!-- Projeto 1 -->
+      <div class="project-item" onclick="window.open('https://github.com/ZanattaDev','_blank')" data-tilt>
         <span class="project-num">01</span>
         <div class="project-info">
-          <div class="project-name">Nome do Projeto 1</div>
-          <div class="project-desc">Descrição curta do projeto e qual problema ele resolve</div>
+          <div class="project-name">Plataforma de E-commerce</div>
+          <div class="project-desc">Site de roupas completo com painel administrativo integrado e gerenciamento de estoque.</div>
         </div>
         <div class="project-meta">
           <div class="project-tags">
-            <span class="project-tag">HTML</span>
-            <span class="project-tag">CSS</span>
+            <span class="project-tag">HTML/CSS</span>
             <span class="project-tag">JS</span>
           </div>
           <svg class="project-arrow" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
             <path d="M7 17L17 7M7 7h10v10"/>
           </svg>
         </div>
-        <div class="project-preview"><div class="project-preview-inner">Preview</div></div>
       </div>
 
-      <div class="project-item" onclick="window.open('#','_blank')">
+      <!-- Projeto 2 -->
+      <div class="project-item" onclick="window.open('https://github.com/ZanattaDev','_blank')" data-tilt>
         <span class="project-num">02</span>
         <div class="project-info">
-          <div class="project-name">Nome do Projeto 2</div>
-          <div class="project-desc">Descrição curta do projeto e qual problema ele resolve</div>
+          <div class="project-name">Motor de Distribuição Inteligente</div>
+          <div class="project-desc">Sistema de backend em Java e Spring Boot planejado para logística e distribuição em tempo real.</div>
         </div>
         <div class="project-meta">
           <div class="project-tags">
-            <span class="project-tag">React</span>
-            <span class="project-tag">Node</span>
-            <span class="project-tag">MySQL</span>
+            <span class="project-tag">Java</span>
+            <span class="project-tag">Spring Boot</span>
           </div>
           <svg class="project-arrow" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
             <path d="M7 17L17 7M7 7h10v10"/>
           </svg>
         </div>
-        <div class="project-preview"><div class="project-preview-inner">Preview</div></div>
       </div>
-
-      <div class="project-item" onclick="window.open('#','_blank')">
-        <span class="project-num">03</span>
-        <div class="project-info">
-          <div class="project-name">Nome do Projeto 3</div>
-          <div class="project-desc">Descrição curta do projeto e qual problema ele resolve</div>
-        </div>
-        <div class="project-meta">
-          <div class="project-tags">
-            <span class="project-tag">Python</span>
-            <span class="project-tag">SQLite</span>
-          </div>
-          <svg class="project-arrow" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-            <path d="M7 17L17 7M7 7h10v10"/>
-          </svg>
-        </div>
-        <div class="project-preview"><div class="project-preview-inner">Preview</div></div>
-      </div>
-
-      <div class="project-item" onclick="window.open('#','_blank')">
-        <span class="project-num">04</span>
-        <div class="project-info">
-          <div class="project-name">Nome do Projeto 4</div>
-          <div class="project-desc">Descrição curta do projeto e qual problema ele resolve</div>
-        </div>
-        <div class="project-meta">
-          <div class="project-tags">
-            <span class="project-tag">PHP</span>
-            <span class="project-tag">MySQL</span>
-          </div>
-          <svg class="project-arrow" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-            <path d="M7 17L17 7M7 7h10v10"/>
-          </svg>
-        </div>
-        <div class="project-preview"><div class="project-preview-inner">Preview</div></div>
-      </div>
-
     </div>
   </div>
 </section>
@@ -445,54 +279,24 @@
     <h2 class="section-title">O que eu <em>entrego</em></h2>
     <p class="section-sub">Do conceito à produção, com qualidade em cada etapa.</p>
 
-    <!-- ✏️ Editar: títulos, descrições e listas de serviços -->
     <div class="services-grid reveal">
-
-      <div class="service-cell">
+      <div class="service-cell" data-tilt data-tilt-glare data-tilt-max-glare="0.1">
         <div class="service-num">01 —</div>
-        <div class="service-title">Desenvolvimento Web</div>
-        <p class="service-body">
-          Sites e aplicações modernas, responsivas e otimizadas,
-          do design ao deploy.
-        </p>
-        <ul class="service-list">
-          <li>Design responsivo</li>
-          <li>Otimização de performance</li>
-          <li>SEO técnico</li>
-          <li>Deploy na nuvem</li>
-        </ul>
+        <div class="service-title">APIs & Backend Robustos</div>
+        <p class="service-body">Criação de estruturas de servidores seguras, velozes e prontas para suportar conexões mobile e web simultâneas.</p>
       </div>
 
-      <div class="service-cell">
+      <div class="service-cell" data-tilt data-tilt-glare data-tilt-max-glare="0.1">
         <div class="service-num">02 —</div>
-        <div class="service-title">Sistemas & Automação</div>
-        <p class="service-body">
-          Scripts e automações para eliminar trabalho repetitivo
-          e conectar sistemas.
-        </p>
-        <ul class="service-list">
-          <li>Web scraping</li>
-          <li>Automação de planilhas</li>
-          <li>Integração de APIs</li>
-          <li>Bots e agendadores</li>
-        </ul>
+        <div class="service-title">Aplicações Mobile Nativas</div>
+        <p class="service-body">Desenvolvimento focado no ecossistema iOS e interfaces responsivas com código performático.</p>
       </div>
 
-      <div class="service-cell">
+      <div class="service-cell" data-tilt data-tilt-glare data-tilt-max-glare="0.1">
         <div class="service-num">03 —</div>
-        <div class="service-title">Banco de Dados</div>
-        <p class="service-body">
-          Modelagem, otimização e manutenção de bancos de dados
-          relacionais com foco em performance.
-        </p>
-        <ul class="service-list">
-          <li>Modelagem relacional</li>
-          <li>Otimização de queries</li>
-          <li>Migração de dados</li>
-          <li>MySQL / PostgreSQL</li>
-        </ul>
+        <div class="service-title">Automações Inteligentes</div>
+        <p class="service-body">Scripts inteligentes em Python para extração de dados, relatórios automatizados e otimização de tempo.</p>
       </div>
-
     </div>
   </div>
 </section>
@@ -506,16 +310,11 @@
 
     <div class="contact-block">
       <div class="contact-left reveal">
-        <h2 class="cta-heading">
-          Vamos construir<br>
-          algo <em>juntos?</em>
-        </h2>
+        <h2 class="cta-heading">Vamos construir<br>algo <em>juntos?</em></h2>
         <p style="font-size:0.9rem;color:var(--muted2);font-weight:300;line-height:1.75;margin-bottom:2rem">
-          Estou sempre aberto a novos projetos, parcerias ou
-          só uma boa conversa sobre tecnologia.
+          Estou sempre aberto a novos projetos, parcerias ou só uma boa conversa sobre tecnologia.
         </p>
 
-        <!-- ✏️ Editar: seus dados de contato -->
         <div class="contact-links">
           <a href="mailto:pedrohztt30@gmail.com" class="contact-link-row">
             <span class="contact-link-label">Email</span>
@@ -527,14 +326,9 @@
             <span style="flex:1">+55 (48) 99198-2782</span>
             <span class="contact-link-arrow">↗</span>
           </a>
-          <a href="https://linkedin.com/in/seuperfil" class="contact-link-row" target="_blank">
-            <span class="contact-link-label">LinkedIn</span>
-            <span style="flex:1">linkedin.com/in/seuperfil</span>
-            <span class="contact-link-arrow">↗</span>
-          </a>
           <a href="https://github.com/ZanattaDev" class="contact-link-row" target="_blank">
             <span class="contact-link-label">GitHub</span>
-            <span style="flex:1">github.com/seugithub</span>
+            <span style="flex:1">github.com/ZanattaDev</span>
             <span class="contact-link-arrow">↗</span>
           </a>
         </div>
@@ -542,7 +336,6 @@
 
       <div class="reveal">
         <div class="contact-form-title">Enviar mensagem</div>
-        <!-- ✏️ Editar: substitua SEUID pelo seu ID do Formspree (formspree.io) -->
         <form action="https://formspree.io/f/SEUID" method="POST">
           <div class="form-field">
             <label>Nome</label>
@@ -556,31 +349,30 @@
             <label>Mensagem</label>
             <textarea name="message" placeholder="Olá! Gostaria de…" required></textarea>
           </div>
-          <button type="submit" class="btn btn-solid" style="width:100%;justify-content:center;cursor:pointer;font-family:var(--sans)">
+          <button type="submit" class="btn btn-solid" style="width:100%;justify-content:center;cursor:pointer;">
             Enviar mensagem →
           </button>
         </form>
       </div>
     </div>
-
   </div>
 </section>
 
-<!-- ═══════════════════════════════
-     FOOTER
-═══════════════════════════════ -->
 <footer>
   <div class="wrap">
     <div class="footer-inner">
-      <!-- ✏️ Editar: seu nome e ano -->
       <div class="footer-left">© 2026 /<em>Pedro Henrique Zanatta</em>/</div>
-      <div class="footer-right">Criciuma, Brasil</div>
+      <div class="footer-right">Criciúma, Brasil</div>
     </div>
   </div>
 </footer>
 
+<!-- ═══════════════════════════════
+     SCRIPTS DE ANIMAÇÃO (EFEITOS VISUAIS)
+═══════════════════════════════ -->
+<script src="https://unpkg.com/scrollreveal"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
 <script src="portfolio.js" defer></script>
-
 
 </body>
 </html>
