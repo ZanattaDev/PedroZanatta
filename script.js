@@ -1,70 +1,127 @@
-/* ── Custom cursor ── */
-const cur = document.getElementById('cursor');
-document.addEventListener('mousemove', (e) => {
-  cur.style.left = e.clientX + 'px';
-  cur.style.top = e.clientY + 'px';
-});
-document.addEventListener('mouseleave', () => (cur.style.opacity = '0'));
-document.addEventListener('mouseenter', () => (cur.style.opacity = '1'));
+/* ═══════════════════════════════════════════
+   script.js — Animações e Interações Base
+   Pedro Henrique Zanatta · Portfolio
+═══════════════════════════════════════════ */
 
-/* ── Sticky nav ── */
-const nav = document.getElementById('nav');
-window.addEventListener(
-  'scroll',
-  () => {
-    nav.classList.toggle('scrolled', window.scrollY > 40);
-  },
-  { passive: true }
-);
+document.addEventListener('DOMContentLoaded', function () {
 
-/* ── Scroll reveal ── */
-const ro = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((e, i) => {
-      if (e.isIntersecting) {
-        e.target.style.transitionDelay = i * 0.05 + 's';
-        e.target.classList.add('visible');
-        ro.unobserve(e.target);
+  /* ─────────────────────────────
+     CURSOR CUSTOMIZADO
+  ───────────────────────────── */
+  const cur  = document.getElementById('cur');
+  const ring = document.getElementById('cur-ring');
+
+  let mouseX = 0, mouseY = 0;
+  let ringX  = 0, ringY  = 0;
+
+  document.addEventListener('mousemove', function (e) {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    cur.style.left = mouseX + 'px';
+    cur.style.top  = mouseY + 'px';
+  });
+
+  // Ring segue com suavidade via lerp
+  (function animateRing() {
+    ringX += (mouseX - ringX) * 0.12;
+    ringY += (mouseY - ringY) * 0.12;
+    ring.style.left = ringX + 'px';
+    ring.style.top  = ringY + 'px';
+    requestAnimationFrame(animateRing);
+  })();
+
+  document.addEventListener('mouseleave', function () {
+    cur.style.opacity  = '0';
+    ring.style.opacity = '0';
+  });
+  document.addEventListener('mouseenter', function () {
+    cur.style.opacity  = '1';
+    ring.style.opacity = '1';
+  });
+
+  // Ring expande em links e botões
+  document.querySelectorAll('a, button').forEach(function (el) {
+    el.addEventListener('mouseenter', function () {
+      ring.style.width       = '46px';
+      ring.style.height      = '46px';
+      ring.style.borderColor = 'rgba(255,255,255,0.3)';
+    });
+    el.addEventListener('mouseleave', function () {
+      ring.style.width       = '32px';
+      ring.style.height      = '32px';
+      ring.style.borderColor = 'rgba(255,255,255,0.15)';
+    });
+  });
+
+
+  /* ─────────────────────────────
+     NAV — SCROLL STICKY
+  ───────────────────────────── */
+  var nav = document.getElementById('nav');
+
+  window.addEventListener('scroll', function () {
+    if (window.scrollY > 40) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
+  }, { passive: true });
+
+
+  /* ─────────────────────────────
+     NAV — LINK ATIVO
+  ───────────────────────────── */
+  var sections = document.querySelectorAll('section[id]');
+  var navLinks = document.querySelectorAll('.nav-links a');
+
+  window.addEventListener('scroll', function () {
+    var current = '';
+    sections.forEach(function (sec) {
+      if (window.scrollY >= sec.offsetTop - 130) {
+        current = sec.id;
       }
     });
-  },
-  { threshold: 0.12 }
-);
-document.querySelectorAll('.reveal').forEach((el) => ro.observe(el));
+    navLinks.forEach(function (link) {
+      link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+    });
+  }, { passive: true });
 
-/* ── Skill bar animation ── */
-const so = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((e) => {
-      if (e.isIntersecting) {
-        e.target.querySelectorAll('.skill-bar-fill').forEach((b) => {
-          setTimeout(() => {
-            b.style.width = b.dataset.width + '%';
-          }, 150);
+
+  /* ─────────────────────────────
+     SCROLL REVEAL
+  ───────────────────────────── */
+  var revealObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.rev').forEach(function (el) {
+    revealObserver.observe(el);
+  });
+
+
+  /* ─────────────────────────────
+     SKILL BARS — ANIMAÇÃO AO SCROLL
+  ───────────────────────────── */
+  var skillObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.querySelectorAll('.sk-fill').forEach(function (bar) {
+          setTimeout(function () {
+            bar.style.width = bar.getAttribute('data-w') + '%';
+          }, 120);
         });
-        so.unobserve(e.target);
+        skillObserver.unobserve(entry.target);
       }
     });
-  },
-  { threshold: 0.2 }
-);
-document.querySelectorAll('.skills-grid').forEach((el) => so.observe(el));
+  }, { threshold: 0.15 });
 
-/* ── Active nav link ── */
-const sections = document.querySelectorAll('section[id]');
-const links = document.querySelectorAll('.nav-links a');
-window.addEventListener(
-  'scroll',
-  () => {
-    let cur = '';
-    sections.forEach((s) => {
-      if (window.scrollY >= s.offsetTop - 120) cur = s.id;
-    });
-    links.forEach((l) => {
-      const active = l.getAttribute('href') === '#' + cur;
-      l.style.color = active ? 'var(--text)' : '';
-    });
-  },
-  { passive: true }
-);
+  document.querySelectorAll('.sk-grid').forEach(function (el) {
+    skillObserver.observe(el);
+  });
 
+});
