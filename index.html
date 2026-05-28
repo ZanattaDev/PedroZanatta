@@ -442,22 +442,27 @@
           </a>
         </div>
       </div>
-
-      <div class="rev">
+<div class="rev">
         <div class="form-title">Enviar mensagem</div>
-        <!-- ✏️ Substitua SEUID pelo seu ID do formspree.io -->
-        <form action="https://formspree.io/f/SEUID" method="POST">
+        
+        <!-- CORRIGIDO: Removido o Formspree e adicionado o id correto -->
+        <form id="contact-form">
           <div class="ff">
             <label>Nome</label>
-            <input type="text" name="name" placeholder="Seu nome" required>
+            <input type="text" name="nome" id="nome" placeholder="Seu nome" required>
           </div>
           <div class="ff">
             <label>Email</label>
-            <input type="email" name="email" placeholder="seu@email.com" required>
+            <input type="email" name="email" id="email" placeholder="seu@email.com" required>
+          </div>
+          <!-- NOVO: Adicionado o campo Assunto que o script do e-mail utiliza -->
+          <div class="ff">
+            <label>Assunto</label>
+            <input type="text" name="assunto" id="assunto" placeholder="Ex: Orçamento / Parceria" required>
           </div>
           <div class="ff">
             <label>Mensagem</label>
-            <textarea name="message" placeholder="Olá! Gostaria de…" required></textarea>
+            <textarea name="mensagem" id="mensagem" placeholder="Olá! Gostaria de…" required></textarea>
           </div>
           <button type="submit" class="btn-s btn-solid btn-full">
             Enviar mensagem →
