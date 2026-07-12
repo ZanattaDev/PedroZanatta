@@ -1,27 +1,24 @@
-/**
- * ECOSSISTEMA DE INTERAÇÃO 3D - O REI DOS SITES
- */
-document.querySelectorAll('.glass-card').forEach(card => {
+// Efeito de partículas no hero
+function createParticles() {
+    const container = document.getElementById('particles');
+    if (!container) return;
     
-    card.addEventListener('mousemove', e => {
-        const boundingBox = card.getBoundingClientRect();
+    for (let i = 0; i < 40; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + 'vw';
+        particle.style.animationDuration = (Math.random() * 20 + 15) + 's';
+        particle.style.opacity = Math.random() * 0.3 + 0.1;
+        particle.style.width = particle.style.height = Math.random() * 6 + 3 + 'px';
+        container.appendChild(particle);
         
-        // Encontra as coordenadas do cursor relativas ao centro do card
-        const cursorX = e.clientX - boundingBox.left - (boundingBox.width / 2);
-        const cursorY = e.clientY - boundingBox.top - (boundingBox.height / 2);
-        
-        // Fator de inclinação física max (quanto maior, mais inclina)
-        const intensidadeInclinacao = 12;
-        
-        const rotacaoDirecionalX = -(cursorY / boundingBox.height) * intensidadeInclinacao;
-        const rotacaodirecionalY = (cursorX / boundingBox.width) * intensidadeInclinacao;
-        
-        // Aplica a matriz de perspectiva 3D mantendo a elevação suave do elemento
-        card.style.transform = `perspective(1200px) translateY(-8px) rotateX(${rotacaoDirecionalX}deg) rotateY(${rotacaodirecionalY}deg)`;
-    });
+        setTimeout(() => particle.remove(), 40000);
+    }
+}
 
-    // Retorna o elemento para o estado de repouso absoluto com transição suave amortecida
-    card.addEventListener('mouseleave', () => {
-        card.style.transform = 'perspective(1200px) translateY(0) rotateX(0deg) rotateY(0deg)';
-    });
+document.addEventListener('DOMContentLoaded', () => {
+    createParticles();
+    
+    // Tailwind script já está no HTML
+    console.log('%cPortfólio de Pedro Henrique Zanatta carregado com sucesso!', 'color: #00ff9d; font-size: 14px');
 });
