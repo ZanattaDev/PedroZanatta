@@ -1,24 +1,23 @@
-// Efeito de partículas no hero
-function createParticles() {
-    const container = document.getElementById('particles');
-    if (!container) return;
-    
-    for (let i = 0; i < 40; i++) {
+// Particles no Hero
+function createFloatingParticles() {
+    const hero = document.querySelector('.hero');
+    for (let i = 0; i < 50; i++) {
         const particle = document.createElement('div');
-        particle.className = 'particle';
+        particle.style.position = 'absolute';
+        particle.style.width = particle.style.height = Math.random() * 4 + 'px';
+        particle.style.background = '#00ff9d';
+        particle.style.borderRadius = '50%';
         particle.style.left = Math.random() * 100 + 'vw';
-        particle.style.animationDuration = (Math.random() * 20 + 15) + 's';
-        particle.style.opacity = Math.random() * 0.3 + 0.1;
-        particle.style.width = particle.style.height = Math.random() * 6 + 3 + 'px';
-        container.appendChild(particle);
-        
-        setTimeout(() => particle.remove(), 40000);
+        particle.style.top = Math.random() * 100 + 'vh';
+        particle.style.opacity = Math.random() * 0.4 + 0.1;
+        particle.style.animation = `float ${Math.random() * 25 + 20}s linear infinite`;
+        hero.appendChild(particle);
     }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    createParticles();
+    createFloatingParticles();
     
-    // Tailwind script já está no HTML
-    console.log('%cPortfólio de Pedro Henrique Zanatta carregado com sucesso!', 'color: #00ff9d; font-size: 14px');
+    // Tailwind script já carregado
+    console.log('%c✅ Portfólio Premium de Pedro Zanatta carregado!', 'color:#00ff9d; font-size:16px; font-weight:bold');
 });
