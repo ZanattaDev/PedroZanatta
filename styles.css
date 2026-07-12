@@ -1,296 +1,67 @@
-/* ═══════════════════════════════════════════
-   styles.css — Tokens, Reset, Tipografia, Layout
-   Pedro Henrique Zanatta · Portfolio Premium
-═══════════════════════════════════════════ */
+/* ==========================================
+   ESTILOS PREMIUM - O REI DOS SITES
+   ========================================== */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap');
 
-/* ─── TOKENS ─── */
 :root {
-  --bg: #080808;
-  --s1: #0f0f0f;
-  --s2: #141414;
-  --s3: #1a1a1a;
-  --border: rgba(255, 255, 255, 0.08);
-  --border2: rgba(255, 255, 255, 0.16);
-  --text: #f0ede9;
-  --muted: #777777;
-  --muted2: #a8a8a8;
-  --accent: #e2d9c8;
-  --green: #3ddc84;
-  --gdim: rgba(61, 220, 132, 0.12);
-  
-  --serif: 'Instrument Serif', Georgia, serif;
-  --sans: 'Geist', system-ui, -apple-system, sans-serif;
-  --mono: 'Geist Mono', ui-monospace, monospace;
-  
-  --max: 1280px;
-  --pg: clamp(1.75rem, 5vw, 3.5rem);
-  --gap: clamp(4.5rem, 10vw, 8rem);
-}
-
-/* ─── RESET & BASE ─── */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-  font-size: 16px;
+    --bg-principal: #0b0f19;
+    --bg-card: rgba(17, 25, 40, 0.65);
+    --border-card: rgba(255, 255, 255, 0.08);
+    --cor-neon-cyan: #00d4ff;
+    --cor-neon-purple: #7928ca;
+    --cor-texto-p: #94a3b8;
+    --cor-texto-h: #f8fafc;
+    --gradiente-premium: linear-gradient(135deg, #00d4ff 0%, #7928ca 100%);
+    --transicao-suave: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 body {
-  font-family: var(--sans);
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.68;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+    background-color: var(--bg-principal);
+    color: var(--cor-texto-p);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    overflow-x: hidden;
 }
 
-/* Grain texture aprimorada */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.028'/%3E%3C/svg%3E");
-  pointer-events: none;
-  z-index: -1;
-  opacity: 0.65;
-  mix-blend-mode: overlay;
-}
-
-/* Cursor customizado premium */
-#cur {
-  width: 6px;
-  height: 6px;
-  background: var(--accent);
-  border-radius: 50%;
-  position: fixed;
-  z-index: 9999;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  transition: all 0.15s ease;
-  mix-blend-mode: difference;
-}
-
-#cur-ring {
-  width: 36px;
-  height: 36px;
-  border: 1px solid rgba(226, 217, 200, 0.25);
-  border-radius: 50%;
-  position: fixed;
-  z-index: 9998;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  transition: width 0.25s ease, height 0.25s ease, border-color 0.3s ease;
-}
-
-a { 
-  color: inherit; 
-  text-decoration: none; 
-}
-
-img { 
-  display: block; 
-  max-width: 100%; 
-  height: auto; 
-}
-
-ul { list-style: none; }
-button { font-family: var(--sans); }
-
-/* ─── LAYOUT ─── */
-.wrap {
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 0 var(--pg);
-  position: relative;
-  z-index: 2;
-}
-
-/* ─── BUTTONS ─── */
-.btn-s {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.87rem;
-  font-weight: 450;
-  letter-spacing: 0.015em;
-  transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1);
-  cursor: pointer;
-  border: none;
-  position: relative;
-  overflow: hidden;
-}
-
-.btn-solid {
-  background: var(--text);
-  color: #080808;
-  padding: 0.75rem 1.75rem;
-  border-radius: 9999px;
-  box-shadow: 0 4px 15px -4px rgba(0, 0, 0, 0.3);
-}
-
-.btn-solid:hover {
-  background: var(--accent);
-  transform: translateY(-3px);
-  box-shadow: 0 12px 25px -6px rgba(226, 217, 200, 0.35);
-}
-
-.btn-outline {
-  color: var(--muted2);
-  padding: 0.75rem 1.25rem;
-  border: 1px solid var(--border2);
-  border-radius: 9999px;
-  background: transparent;
-  transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-.btn-outline:hover {
-  color: var(--text);
-  border-color: var(--accent);
-  background: rgba(226, 217, 200, 0.05);
-}
-
-.btn-full {
-  width: 100%;
-  justify-content: center;
-}
-
-/* ─── SECTIONS ─── */
-.section {
-  padding: var(--gap) 0;
-  border-top: 1px solid var(--border);
-  position: relative;
-}
-
-.section:first-of-type {
-  border-top: none;
-}
-
-.sec-lbl {
-  font-family: var(--mono);
-  font-size: 0.7rem;
-  color: var(--muted);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 3rem;
-  font-weight: 500;
-}
-
-.sec-lbl::before {
-  content: '';
-  display: block;
-  width: 28px;
-  height: 1px;
-  background: linear-gradient(to right, transparent, var(--muted), transparent);
-  flex-shrink: 0;
-}
-
-.sec-h {
-  font-family: var(--serif);
-  font-weight: 400;
-  font-size: clamp(2.1rem, 5.5vw, 3.4rem);
-  line-height: 1.05;
-  letter-spacing: -0.035em;
-  margin-bottom: 0.8rem;
-}
-
-.sec-h em {
-  font-style: italic;
-  color: var(--muted2);
-}
-
-.sec-sub {
-  font-size: 1rem;
-  color: var(--muted2);
-  font-weight: 300;
-  line-height: 1.78;
-  max-width: 520px;
-  margin-bottom: 3rem;
-}
-
-/* ─── SCROLL REVEAL ─── */
-.rev {
-  opacity: 0;
-  transform: translateY(28px);
-  transition: all 0.85s cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-.rev.in {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ─── ANIMATIONS ─── */
-@keyframes fadeUp {
-  from { 
-    opacity: 0; 
-    transform: translateY(24px); 
-  }
-  to { 
-    opacity: 1; 
-    transform: none; 
-  }
-}
-
-@keyframes caretBlink {
-  0%, 100% { border-color: var(--accent); }
-  50% { border-color: transparent; }
-}
-
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.25; }
-}
-
-/* ─── SCROLLBAR ─── */
+/* Scrollbar Ultrassutil */
 ::-webkit-scrollbar {
-  width: 5px;
+    width: 8px;
 }
-
 ::-webkit-scrollbar-track {
-  background: var(--bg);
+    background: var(--bg-principal);
 }
-
 ::-webkit-scrollbar-thumb {
-  background: var(--border2);
-  border-radius: 20px;
+    background: var(--border-card);
+    border-radius: 20px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--muted);
+    background: var(--cor-neon-cyan);
 }
 
-/* ─── PLACEHOLDER ─── */
-::placeholder { 
-  color: var(--muted); 
-  opacity: 0.7;
+/* Efeito Glassmorphism (Vidro Reflexivo) */
+.glass-card {
+    background: var(--bg-card);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--border-card);
+    border-radius: 24px;
+    padding: 2.5rem;
+    transition: var(--transicao-suave);
+    position: relative;
+    overflow: hidden;
 }
 
-/* ─── RESPONSIVE ─── */
-@media (max-width: 768px) {
-  :root {
-    --pg: 1.5rem;
-    --gap: 3.5rem;
-  }
-  
-  .sec-lbl {
-    margin-bottom: 2.25rem;
-  }
+/* Efeito Glow e Elevação ao Passar o Mouse */
+.glass-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(0, 212, 255, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 
+                0 0 30px rgba(0, 212, 255, 0.05);
 }
 
-@media (max-width: 480px) {
-  .btn-solid,
-  .btn-outline {
-    padding: 0.7rem 1.4rem;
-    font-size: 0.85rem;
-  }
+/* Textos em Gradiente de Alta Definição */
+.text-gradient {
+    background: var(--gradiente-premium);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
 }
