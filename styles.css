@@ -1,67 +1,293 @@
-/* ==========================================
-   ESTILOS PREMIUM - O REI DOS SITES
-   ========================================== */
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap');
+/* ==========================================================================
+   ARQUITETURA DE ESTILO PREMIUM - "O REI DOS SITES"
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap');
 
 :root {
-    --bg-principal: #0b0f19;
-    --bg-card: rgba(17, 25, 40, 0.65);
-    --border-card: rgba(255, 255, 255, 0.08);
-    --cor-neon-cyan: #00d4ff;
-    --cor-neon-purple: #7928ca;
-    --cor-texto-p: #94a3b8;
-    --cor-texto-h: #f8fafc;
-    --gradiente-premium: linear-gradient(135deg, #00d4ff 0%, #7928ca 100%);
-    --transicao-suave: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    --bg-deep: #060913;
+    --bg-card: rgba(13, 20, 38, 0.45);
+    --border-glow: rgba(255, 255, 255, 0.07);
+    --cyan: #00d4ff;
+    --purple: #7928ca;
+    --txt-main: #94a3b8;
+    --txt-white: #f8fafc;
+    --gradient: linear-gradient(135deg, #00d4ff 0%, #7928ca 100%);
+    --easing: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-shadow: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
-    background-color: var(--bg-principal);
-    color: var(--cor-texto-p);
+    background-color: var(--bg-deep);
+    color: var(--txt-main);
     font-family: 'Plus Jakarta Sans', sans-serif;
     overflow-x: hidden;
-}
-
-/* Scrollbar Ultrassutil */
-::-webkit-scrollbar {
-    width: 8px;
-}
-::-webkit-scrollbar-track {
-    background: var(--bg-principal);
-}
-::-webkit-scrollbar-thumb {
-    background: var(--border-card);
-    border-radius: 20px;
-}
-::-webkit-scrollbar-thumb:hover {
-    background: var(--cor-neon-cyan);
-}
-
-/* Efeito Glassmorphism (Vidro Reflexivo) */
-.glass-card {
-    background: var(--bg-card);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid var(--border-card);
-    border-radius: 24px;
-    padding: 2.5rem;
-    transition: var(--transicao-suave);
     position: relative;
-    overflow: hidden;
 }
 
-/* Efeito Glow e Elevação ao Passar o Mouse */
-.glass-card:hover {
-    transform: translateY(-6px);
-    border-color: rgba(0, 212, 255, 0.3);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 
-                0 0 30px rgba(0, 212, 255, 0.05);
+/* Orbes de Iluminação Dinâmica de Fundo */
+.orbe-luz-1, .orbe-luz-2 {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    filter: blur(140px);
+    z-index: -1;
+    opacity: 0.12;
+    pointer-events: none;
 }
+.orbe-luz-1 { top: -100px; left: -200px; background: var(--cyan); }
+.orbe-luz-2 { top: 800px; right: -200px; background: var(--purple); }
 
-/* Textos em Gradiente de Alta Definição */
+/* Utilitários */
 .text-gradient {
-    background: var(--gradiente-premium);
+    background: var(--gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+.font-code { font-family: 'Fira Code', monospace; }
+
+/* Header Navbar */
+.header-principal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 8%;
+    background: rgba(6, 9, 19, 0.7);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-glow);
+    position: fixed;
+    width: 84%;
+    top: 0;
+    z-index: 100;
+}
+.nav-links a {
+    color: var(--txt-white);
+    text-decoration: none;
+    margin-left: 2.5rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s var(--easing);
+}
+.nav-links a:hover { color: var(--cyan); }
+.btn-nav {
+    background: rgba(0, 212, 255, 0.1);
+    border: 1px solid var(--cyan);
+    padding: 0.6rem 1.4rem;
+    border-radius: 50px;
+}
+
+/* Seção Hero */
+.hero-container {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    padding: 0 8%;
+    margin-top: 5rem;
+}
+.titulo-principal {
+    font-size: 4.5rem;
     font-weight: 800;
+    color: var(--txt-white);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+}
+.subtitulo {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 1rem 0 1.5rem 0;
+    color: #cbd5e1;
+}
+.descricao-hero {
+    max-width: 600px;
+    font-size: 1.15rem;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+}
+.botoes-hero { display: flex; gap: 1.5rem; }
+
+/* Botões Premium */
+.btn-premium {
+    padding: 1rem 2.2rem;
+    border-radius: 14px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.4s var(--easing);
+}
+.btn-premium.principal {
+    background: var(--gradient);
+    color: var(--txt-white);
+    box-shadow: 0 8px 30px rgba(121, 40, 202, 0.3);
+}
+.btn-premium.principal:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(0, 212, 255, 0.45);
+}
+.btn-premium.secundario {
+    border: 1px solid var(--border-glow);
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--txt-white);
+}
+.btn-premium.secundario:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--cyan);
+}
+
+/* Linha de Stacks */
+.section-techs { padding: 3rem 8%; }
+.grid-techs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+.tech-box {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-glow);
+    padding: 1.2rem;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-weight: 600;
+    color: var(--txt-white);
+}
+.tech-box i { font-size: 1.5rem; color: var(--cyan); }
+
+/* Glassmorphism Cards Arquitetura */
+.glass-card {
+    background: var(--bg-card);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--border-glow);
+    border-radius: 24px;
+    padding: 2.5rem;
+    transition: transform 0.2s var(--easing), border-color 0.4s var(--easing), box-shadow 0.4s var(--easing);
+    transform-style: preserve-3d;
+}
+.glass-card:hover {
+    border-color: rgba(0, 212, 255, 0.3);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(0, 212, 255, 0.05);
+}
+
+/* Seção Projetos */
+.secao-projetos { padding: 6rem 8%; }
+.titulo-secao { font-size: 2.5rem; margin-bottom: 3rem; font-weight: 800; }
+.grid-projetos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+}
+.project-card { display: flex; flex-direction: column; gap: 1.2rem; position: relative; }
+.card-badge {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: rgba(0, 212, 255, 0.08);
+    border: 1px solid var(--cyan);
+    color: var(--cyan);
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+.project-icon {
+    width: 55px;
+    height: 55px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-glow);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--txt-white);
+}
+.project-card h3 { color: var(--txt-white); font-size: 1.4rem; font-weight: 700; }
+.project-card p { line-height: 1.6; font-size: 0.95rem; }
+.tech-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; }
+.tech-tags span {
+    background: rgba(255, 255, 255, 0.04);
+    padding: 0.3rem 0.8rem;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    color: var(--txt-white);
+    border: 1px solid var(--border-glow);
+}
+.link-projeto {
+    text-decoration: none;
+    color: var(--cyan);
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: auto;
+    transition: gap 0.3s;
+}
+.link-projeto:hover { gap: 0.8rem; }
+
+/* Seção Liderança */
+.secao-lideranca { padding: 2rem 8%; }
+.lideranca-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+.badge-lider { color: var(--purple); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 0.5rem; }
+.lideranca-info h2 { font-size: 2.2rem; color: var(--txt-white); margin-bottom: 1rem; }
+.lideranca-info p { line-height: 1.7; }
+.lideranca-stats { display: flex; gap: 2rem; }
+.stat-box {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-glow);
+    padding: 2rem;
+    border-radius: 18px;
+    text-align: center;
+    flex: 1;
+}
+.stat-box h3 { font-size: 2.5rem; color: var(--txt-white); margin-bottom: 0.5rem; }
+
+/* Seção Contato */
+.contato-container { padding: 6rem 8%; text-align: center; max-width: 1000px; margin: 0 auto; }
+.contato-container p { margin: 1rem 0 3rem; font-size: 1.1rem; }
+.grid-contatos { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+.contato-box {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    color: var(--txt-main);
+}
+.contato-box h3 { color: var(--txt-white); font-size: 1.3rem; }
+.icon-wrapper {
+    width: 65px;
+    height: 65px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-glow);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: var(--txt-white);
+    transition: all 0.3s;
+}
+.contato-box.email:hover .icon-wrapper { border-color: #ef4444; color: #ef4444; box-shadow: 0 0 20px rgba(239, 68, 68, 0.2); }
+.contato-box.whatsapp:hover .icon-wrapper { border-color: #22c55e; color: #22c55e; box-shadow: 0 0 20px rgba(34, 197, 94, 0.2); }
+
+/* Footer */
+.footer-final { text-align: center; padding: 3rem 0; border-top: 1px solid var(--border-glow); font-size: 0.9rem; }
+
+/* Responsividade de Alta Performance */
+@media(max-width: 968px) {
+    .titulo-principal { font-size: 3rem; }
+    .lideranca-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .header-principal { width: 92%; padding: 1.5rem 4%; }
+    .hero-container, .secao-projetos, .secao-lideranca, .section-techs { padding-left: 4%; padding-right: 4%; }
 }
