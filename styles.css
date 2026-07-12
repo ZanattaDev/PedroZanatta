@@ -1,48 +1,83 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
 
-:root {
-    --accent: #00ff9d;
-}
-
 body {
-    font-family: 'Inter', system_ui, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .heading {
     font-family: 'Space Grotesk', sans-serif;
 }
 
-.hero-bg {
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
-}
-
 .glass {
-    background: rgba(255, 255, 255, 0.06);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(10, 10, 10, 0.7);
+    backdrop-filter: blur(24px);
 }
 
-.project-card:hover {
-    transform: translateY(-20px);
-    box-shadow: 0 30px 60px -15px rgb(0 255 157 / 0.3);
+.hero {
+    background: linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 100%);
 }
 
 .nav-link {
     position: relative;
-    transition: color 0.3s;
 }
 
-.nav-link::after {
+.nav-link:after {
     content: '';
     position: absolute;
-    bottom: -4px;
-    left: 0;
     width: 0;
     height: 2px;
-    background: var(--accent);
-    transition: width 0.4s ease;
+    bottom: -6px;
+    left: 0;
+    background: #00ff9d;
+    transition: all 0.4s ease;
 }
 
-.nav-link:hover::after {
+.nav-link:hover:after {
     width: 100%;
+}
+
+.project-card {
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover {
+    transform: translateY(-30px);
+}
+
+.tag {
+    background: rgba(255,255,255,0.08);
+    padding: 6px 18px;
+    border-radius: 9999px;
+    font-size: 0.85rem;
+}
+
+.contact-btn {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 3rem 2.5rem;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    transition: all 0.4s ease;
+}
+
+.contact-btn:hover {
+    background: rgba(0, 255, 157, 0.1);
+    border-color: #00ff9d;
+    transform: scale(1.05);
+}
+
+.tech-card {
+    background: rgba(255,255,255,0.05);
+    padding: 2.5rem 1.5rem;
+    border-radius: 1.5rem;
+    text-align: center;
+    font-weight: 600;
+    transition: all 0.4s;
+}
+
+.tech-card:hover {
+    background: rgba(0, 255, 157, 0.15);
+    transform: translateY(-8px);
 }
