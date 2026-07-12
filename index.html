@@ -1,246 +1,454 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pedro Henrique Zanatta — Desenvolvedor FullStack</title>
-  <meta name="description" content="FullStack Developer & Dev Apps | Criciúma, SC | Java • Python • PHP • C/C++ • JS/TS • Lua • MySQL">
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
-  
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="portfolio.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pedro Henrique Zanatta — Desenvolvedor</title>
+<meta name="description" content="FullStack Developer & Dev Apps | Criciúma, SC | Java • Python • PHP • C/C++ • JS/TS • Lua • MySQL">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="portfolio.css">
 </head>
 <body>
-  <div id="cur"></div>
-  <div id="cur-ring"></div>
-
-  <!-- NAV -->
-  <nav id="nav">
-    <div class="nav-inner">
-      <a href="#home" class="nav-logo">/<em>PedroZanatta</em>/</a>
-      <ul class="nav-links">
-        <li><a href="#about">Sobre</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projetos</a></li>
-        <li><a href="#services">Serviços</a></li>
-        <li><a href="#contact">Contato</a></li>
-      </ul>
-      <div class="nav-pill">
-        <span class="dot-green"></span>
-        Disponível
-      </div>
-    </div>
-  </nav>
-
-  <!-- HERO -->
-  <section id="home">
-    <div class="wrap">
-      <div class="hero-eyebrow">
-        <span class="ey-line"></span>
-        <span class="ey-txt">Criciúma, Santa Catarina · FullStack Developer & Dev Apps · 16 anos</span>
-      </div>
-      
-      <h1 class="hero-h1">
-        Construindo sistemas<br>
-        <em>que realmente funcionam</em><br>
-        para <span id="typing-text"></span>
-      </h1>
-      
-      <p class="hero-desc">
-        Desenvolvedor FullStack apaixonado por criar soluções completas. 
-        Especializado em backends robustos, automações inteligentes e interfaces 
-        intuitivas — do servidor até a experiência do usuário.
-      </p>
-      
-      <div class="hero-btns">
-        <a href="#projects" class="btn-s btn-solid">Ver meus projetos</a>
-        <a href="#contact" class="btn-s btn-outline">
-          Fale comigo
-          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-            <path d="M5 12h14M12 5l7 7-7 7"/>
-          </svg>
-        </a>
-      </div>
-
-      <div class="hero-foot">
-        <div class="stats">
-          <div class="stat">
-            <div class="stat-n">20+</div>
-            <div class="stat-l">Repositórios públicos</div>
-          </div>
-          <div class="stat">
-            <div class="stat-n">2+</div>
-            <div class="stat-l">Anos de experiência</div>
-          </div>
-          <div class="stat">
-            <div class="stat-n">7+</div>
-            <div class="stat-l">Linguagens dominadas</div>
-          </div>
-        </div>
-        
-        <div class="socials">
-          <a href="https://github.com/ZanattaDev" class="soc" target="_blank">
-            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-            </svg>
-            GitHub
-          </a>
-          <a href="https://wa.me/5548991982782" class="soc" target="_blank">
-            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
-            </svg>
-            WhatsApp
-          </a>
-          <a href="mailto:pedrohztt30@gmail.com" class="soc">
-            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-              <rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/>
-            </svg>
-            Email
-          </a>
-          <a href="https://instagram.com/pedro_zanattaa" class="soc" target="_blank">
-            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-              <rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/>
-            </svg>
-            Instagram
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SOBRE -->
-  <section id="about" class="section">
-    <div class="wrap">
-      <div class="sec-lbl">Sobre mim</div>
-      <div class="about-grid rev">
-        <div class="about-left">
-          <div class="about-photo">
-            <img src="https://avatars.githubusercontent.com/u/191162849?v=4" alt="Pedro Henrique Zanatta">
-          </div>
-          <div class="about-cards">
-            <div class="acard">
-              <div class="acard-l">Educação</div>
-              <div class="acard-v">Técnico em Informática<br>CEDUP Abílio Paulo</div>
-            </div>
-            <div class="acard">
-              <div class="acard-l">Localização</div>
-              <div class="acard-v">Criciúma, SC — Brasil</div>
-            </div>
-            <div class="acard">
-              <div class="acard-l">Status</div>
-              <div class="acard-v available">Disponível para projetos</div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="about-right">
-          <div class="about-text">
-            <p>Olá! Sou Pedro Henrique Zanatta, tenho 16 anos e moro em Criciúma, Santa Catarina.</p>
-            <p>Sou Desenvolvedor FullStack com forte foco em backends robustos e desenvolvimento de aplicações completas. Domino Java, Python, PHP, C/C++, JavaScript/TypeScript, Lua e MySQL.</p>
-            <p>Estudo Técnico em Informática no CEDUP Abílio Paulo e busco sempre entregar soluções práticas, bem estruturadas e de alta qualidade.</p>
-          </div>
-          
-          <a href="#" class="btn-s btn-outline cv-btn" download>
-            Baixar currículo
-            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-              <path d="M12 5v14M5 12l7 7 7-7"/>
-            </svg>
-          </a>
-          
-          <div class="detail-table">
-            <div class="drow"><span class="dk">Idade</span><span class="dv">16 anos</span></div>
-            <div class="drow"><span class="dk">Experiência</span><span class="dv">2+ anos</span></div>
-            <div class="drow"><span class="dk">Foco</span><span class="dv">Backend · Aplicações · FullStack</span></div>
-            <div class="drow"><span class="dk">Idiomas</span><span class="dv">Português (nativo) · Inglês</span></div>
-            <div class="drow"><span class="dk">Disponibilidade</span><span class="dv">Freelance e Estágio</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SKILLS, PROJETOS, SERVIÇOS, CONTATO e FOOTER permanecem iguais na estrutura -->
-
-  <!-- SKILLS -->
-  <section id="skills" class="section">
-    <div class="wrap">
-      <div class="sec-lbl">Habilidades</div>
-      <h2 class="sec-h">Kit de <em>ferramentas</em></h2>
-      <p class="sec-sub">Tecnologias que utilizo para transformar ideias em produtos funcionais.</p>
-      <div class="sk-grid rev">
-        <!-- Seu conteúdo original mantido aqui -->
-      </div>
-    </div>
-  </section>
-
-  <!-- PROJETOS -->
-  <section id="projects" class="section">
-    <div class="wrap">
-      <div class="sec-lbl">Projetos</div>
-      <h2 class="sec-h">Trabalhos em <em>destaque</em></h2>
-      <p class="sec-sub">Seleção de projetos reais desenvolvidos por mim.</p>
-      <div class="proj-list rev">
-        <!-- Seus 5 projetos + "Ver todos" mantidos exatamente como estavam -->
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVIÇOS -->
-  <section id="services" class="section">
-    <div class="wrap">
-      <div class="sec-lbl">Serviços</div>
-      <h2 class="sec-h">O que eu <em>entrego</em></h2>
-      <p class="sec-sub">Soluções completas com qualidade e atenção aos detalhes.</p>
-      <div class="srv-grid rev">
-        <!-- Seus 3 serviços mantidos -->
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTATO -->
-  <section id="contact" class="section">
-    <div class="wrap">
-      <div class="sec-lbl">Contato</div>
-      <div class="ct-grid">
-        <div class="rev">
-          <h2 class="ct-h">Vamos construir<br>algo <em>juntos?</em></h2>
-          <p class="ct-desc">
-            Estou aberto a projetos freelance, estágios ou apenas uma conversa sobre tecnologia. 
-            Entre em contato!
-          </p>
-          <div class="ct-links">
-            <!-- Seus links originais mantidos -->
-          </div>
-        </div>
-
-        <div class="rev">
-          <div class="form-title">Enviar mensagem</div>
-          <form id="contact-form">
-            <div class="ff"><label>Nome</label><input type="text" name="nome" placeholder="Seu nome" required></div>
-            <div class="ff"><label>Email</label><input type="email" name="email" placeholder="seu@email.com" required></div>
-            <div class="ff"><label>Assunto</label><input type="text" name="assunto" placeholder="Ex: Orçamento, Colaboração, Dúvida" required></div>
-            <div class="ff"><label>Mensagem</label><textarea name="mensagem" placeholder="Olá Pedro, gostaria de..." required></textarea></div>
-            <button type="submit" class="btn-s btn-solid btn-full">Enviar mensagem →</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="wrap">
-      <div class="ft-inner">
-        <div class="ft-l">© 2026 /<em>Pedro Henrique Zanatta</em>/</div>
-        <div class="ft-r">Criciúma, SC · Brasil</div>
-      </div>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
-  <script src="portfolio.js"></script>
+<div id="cur"></div>
+<div id="cur-ring"></div>
+<!-- ══════════════════════════════
+     NAV
+══════════════════════════════ -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#home" class="nav-logo">/<em>PedroZanatta</em>/</a>
+    <ul class="nav-links">
+      <li><a href="#about">Sobre</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projetos</a></li>
+      <li><a href="#services">Serviços</a></li>
+      <li><a href="#contact">Contato</a></li>
+    </ul>
+    <div class="nav-pill">
+      <span class="dot-green"></span>
+      Disponível
+    </div>
+  </div>
+</nav>
+<!-- ══════════════════════════════
+     HERO
+══════════════════════════════ -->
+<section id="home">
+  <div class="wrap">
+    <div class="hero-eyebrow">
+      <span class="ey-line"></span>
+      <span class="ey-txt">Criciúma, Santa Catarina · FullStack Developer & Dev Apps · 16y</span>
+    </div>
+    <h1 class="hero-h1">
+      Construindo sistemas<br>
+      <em>que funcionam</em><br>
+      para <span id="typing-text"></span>
+    </h1>
+    <p class="hero-desc">
+      Desenvolvedor FullStack apaixonado por tecnologia. Crio backends robustos,
+      automações inteligentes e interfaces que fazem sentido — desde o Java no
+      servidor até o HTML na tela.
+    </p>
+    <div class="hero-btns">
+      <a href="#projects" class="btn-s btn-solid">Ver projetos</a>
+      <a href="#contact" class="btn-s btn-outline">
+        Fale comigo
+        <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+    <div class="hero-foot">
+      <div class="stats">
+        <div class="stat">
+          <div class="stat-n">20+</div>
+          <div class="stat-l">Repositórios</div>
+        </div>
+        <div class="stat">
+          <div class="stat-n">2+</div>
+          <div class="stat-l">Anos de exp.</div>
+        </div>
+        <div class="stat">
+          <div class="stat-n">7+</div>
+          <div class="stat-l">Linguagens</div>
+        </div>
+      </div>
+      <div class="socials">
+        <a href="https://github.com/ZanattaDev" class="soc" target="_blank">
+          <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+          </svg>
+          GitHub
+        </a>
+        <a href="https://wa.me/5548991982782" class="soc" target="_blank">
+          <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+          </svg>
+          WhatsApp
+        </a>
+        <a href="mailto:pedrohztt30@gmail.com" class="soc">
+          <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/>
+          </svg>
+          Email
+        </a>
+        <a href="https://instagram.com/pedro_zanattaa" class="soc" target="_blank">
+          <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/>
+          </svg>
+          Instagram
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ══════════════════════════════
+     SOBRE
+══════════════════════════════ -->
+<section id="about" class="section">
+  <div class="wrap">
+    <div class="sec-lbl">Sobre mim</div>
+    <div class="about-grid rev">
+      <div class="about-left">
+        <!--
+          ✏️ FOTO:
+          A foto abaixo usa seu GitHub Avatar automaticamente.
+          Para usar uma foto pessoal, troque o src:
+          <img src="sua-foto.jpg" alt="Pedro Henrique Zanatta">
+        -->
+        <div class="about-photo">
+          <img
+            src="https://avatars.githubusercontent.com/u/191162849?v=4"
+            alt="Pedro Henrique Zanatta"
+            onerror="this.parentElement.style.display='flex';this.remove()"
+          >
+        </div>
+        <div class="about-cards">
+          <div class="acard">
+            <div class="acard-l">Educação</div>
+            <div class="acard-v">Técnico em Informática<br>CEDUP Abílio Paulo</div>
+          </div>
+          <div class="acard">
+            <div class="acard-l">Localização</div>
+            <div class="acard-v">Criciúma, SC — Brasil</div>
+          </div>
+          <div class="acard">
+            <div class="acard-l">Status</div>
+            <div class="acard-v available">Disponível para projetos</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-right">
+        <div class="about-text">
+          <p>
+            Olá! Sou Pedro Henrique Zanatta, 16 anos, de Criciúma, Santa Catarina.
+            Desenvolvedor FullStack com foco em backends robustos e desenvolvimento
+            de aplicativos — de APIs REST a sistemas IoT com Arduino, sempre buscando
+            soluções completas e bem estruturadas.
+          </p>
+          <p>
+            Estudo no Técnico em Informática no CEDUP Abílio Paulo e domino Java,
+            Python, PHP, C/C++, JavaScript/TypeScript, Lua e MySQL. Cada projeto é
+            uma oportunidade de aprender algo novo e entregar código que realmente
+            funciona na prática.
+          </p>
+          <p>
+            Apaixonado por tecnologia desde cedo, construo sistemas desde automações
+            inteligentes até aplicativos completos — sempre com foco em performance,
+            código limpo e resultado real.
+          </p>
+        </div>
+        <a href="#" class="btn-s btn-outline cv-btn" download>
+          Baixar currículo
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path d="M12 5v14M5 12l7 7 7-7"/>
+          </svg>
+        </a>
+        <div class="detail-table">
+          <div class="drow"><span class="dk">Idade</span><span class="dv">16 anos</span></div>
+          <div class="drow"><span class="dk">Experiência</span><span class="dv">2+ anos</span></div>
+          <div class="drow"><span class="dk">Foco</span><span class="dv">Backend · Dev Apps · FullStack</span></div>
+          <div class="drow"><span class="dk">Idiomas</span><span class="dv">Português · Inglês</span></div>
+          <div class="drow"><span class="dk">Disponibilidade</span><span class="dv">Freelance / Estágio</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ══════════════════════════════
+     SKILLS
+══════════════════════════════ -->
+<section id="skills" class="section">
+  <div class="wrap">
+    <div class="sec-lbl">Habilidades</div>
+    <h2 class="sec-h">Kit de <em>ferramentas</em></h2>
+    <p class="sec-sub">Tecnologias que uso para construir produtos de verdade.</p>
+    <div class="sk-grid rev">
+      <div class="sk-cat">
+        <div class="sk-cat-title">Backend</div>
+        <div class="sk-row">
+          <span class="sk-name">Java / Spring Boot</span>
+          <div class="sk-right"><div class="sk-track"><div class="sk-fill" data-w="80"></div></div><span class="sk-pct">80%</span></div>
+        </div>
+        <div class="sk-row">
+          <span class="sk-name">Python</span>
+          <div class="sk-right"><div class="sk-track"><div class="sk-fill" data-w="85"></div></div><span class="sk-pct">85%</span></div>
+        </div>
+        <div class="sk-row">
+          <span class="sk-name">PHP</span>
+          <div class="sk-right"><div class="sk-track"><div class="sk-fill" data-w="75"></div></div><span class="sk-pct">75%</span></div>
+        </div>
+        <div class="sk-row">
+          <span class="sk-name">MySQL</span>
+          <div class="sk-right"><div class="sk-track"><div class="sk-fill" data-w="80"></div></div><span class="sk-pct">80%</span></div>
+        </div>
+        <div class="sk-row">
+          <span class="sk-name">Lua</span>
+          <div class="sk-right"><div class="sk-track"><div class="sk-fill" data-w="70"></div></div><span class="sk-pct">70%</span></div>
+        </div>
+      </div>
+      <div class="sk-cat">
+        <div class="sk-cat-title">Frontend & Sistemas</div>
+        <div class="sk-row">
+          <span class="sk-name">HTML & CSS</span>
+          <div class="sk-right"><div class="sk-track"><div class="sk-fill" data-w="88"></div></div><span class="sk-pct">88%</span></div>
+        </div>
+        <div class="sk-row">
+          <span class="sk-name">JavaScript / TypeScript</span>
+          <div class="sk-right"><div class="sk-track"><div class="sk-fill" data-w="78"></div></div><span class="sk-pct">78%</span></div>
+        </div>
+        <div class="sk-row">
+          <span class="sk-name">C / C++ (Arduino)</span>
+          <div class="sk-right"><div class="sk-track"><div class="sk-fill" data-w="72"></div></div><span class="sk-pct">72%</span></div>
+        </div>
+        <div class="sk-row">
+          <span class="sk-name">Git & GitHub</span>
+          <div class="sk-right"><div class="sk-track"><div class="sk-fill" data-w="85"></div></div><span class="sk-pct">85%</span></div>
+        </div>
+        <div class="sk-row">
+          <span class="sk-name">n8n (automação)</span>
+          <div class="sk-right"><div class="sk-track"><div class="sk-fill" data-w="65"></div></div><span class="sk-pct">65%</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ══════════════════════════════
+     PROJETOS
+══════════════════════════════ -->
+<section id="projects" class="section">
+  <div class="wrap">
+    <div class="sec-lbl">Projetos</div>
+    <h2 class="sec-h">Trabalhos em <em>destaque</em></h2>
+    <p class="sec-sub">Projetos reais do meu GitHub — cada um com uma história.</p>
+    <div class="proj-list rev">
+      <div class="proj-item" onclick="window.open('https://github.com/ZanattaDev/PedroZanatta','_blank')">
+        <span class="proj-num">01</span>
+        <div class="proj-info">
+          <div class="proj-name">Portfólio Pessoal</div>
+          <div class="proj-desc">Este site — HTML, CSS e JavaScript puro. Design editorial dark, animações de scroll, efeito de digitação e cursor customizado.</div>
+        </div>
+        <div class="proj-meta">
+          <div class="proj-tags">
+            <span class="ptag">HTML</span><span class="ptag">CSS</span><span class="ptag">JS</span>
+          </div>
+          <svg class="proj-arrow" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </div>
+      </div>
+      <div class="proj-item" onclick="window.open('https://github.com/ZanattaDev/codigo-para-detectar-nuvem-com-arduino','_blank')">
+        <span class="proj-num">02</span>
+        <div class="proj-info">
+          <div class="proj-name">Sensor de Nuvem com Arduino</div>
+          <div class="proj-desc">Sistema IoT em C++ com Arduino e sensor ultrassônico para detecção de nuvens. 13 commits com testes reais e iterações progressivas.</div>
+        </div>
+        <div class="proj-meta">
+          <div class="proj-tags">
+            <span class="ptag">C++</span><span class="ptag">Arduino</span><span class="ptag">IoT</span>
+          </div>
+          <svg class="proj-arrow" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </div>
+      </div>
+      <div class="proj-item" onclick="window.open('https://github.com/ZanattaDev/Banco-De-Dados','_blank')">
+        <span class="proj-num">03</span>
+        <div class="proj-info">
+          <div class="proj-name">Banco de Dados — Java CRUD</div>
+          <div class="proj-desc">Sistema CRUD completo em Java com conexão a banco relacional. Arquitetura separada por responsabilidade: Conexao, Inserir, Alterar, Main.</div>
+        </div>
+        <div class="proj-meta">
+          <div class="proj-tags">
+            <span class="ptag">Java</span><span class="ptag">MySQL</span><span class="ptag">JDBC</span>
+          </div>
+          <svg class="proj-arrow" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </div>
+      </div>
+      <div class="proj-item" onclick="window.open('https://github.com/ZanattaDev/Java-boletim','_blank')">
+        <span class="proj-num">04</span>
+        <div class="proj-info">
+          <div class="proj-name">Sistema de Boletim Escolar</div>
+          <div class="proj-desc">Aplicação Java para gerenciamento de notas escolares com lógica de cálculo de médias, situação do aluno e relatórios de desempenho.</div>
+        </div>
+        <div class="proj-meta">
+          <div class="proj-tags">
+            <span class="ptag">Java</span>
+          </div>
+          <svg class="proj-arrow" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </div>
+      </div>
+      <div class="proj-item" onclick="window.open('https://github.com/ZanattaDev/java-chamada','_blank')">
+        <span class="proj-num">05</span>
+        <div class="proj-info">
+          <div class="proj-name">Sistema de Chamada</div>
+          <div class="proj-desc">Controle de frequência em Java — registro de presença e ausência com persistência de dados e relatório de faltas por aluno.</div>
+        </div>
+        <div class="proj-meta">
+          <div class="proj-tags">
+            <span class="ptag">Java</span>
+          </div>
+          <svg class="proj-arrow" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </div>
+      </div>
+      <div class="proj-item proj-all" onclick="window.open('https://github.com/ZanattaDev','_blank')">
+        <span class="proj-num">→</span>
+        <div class="proj-info">
+          <div class="proj-name">Ver todos os projetos</div>
+          <div class="proj-desc">20+ repositórios públicos — Java, Python, PHP, C++, JavaScript, Lua e muito mais.</div>
+        </div>
+        <div class="proj-meta">
+          <div class="proj-tags">
+            <span class="ptag">github.com/ZanattaDev</span>
+          </div>
+          <svg class="proj-arrow" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ══════════════════════════════
+     SERVIÇOS
+══════════════════════════════ -->
+<section id="services" class="section">
+  <div class="wrap">
+    <div class="sec-lbl">Serviços</div>
+    <h2 class="sec-h">O que eu <em>entrego</em></h2>
+    <p class="sec-sub">Do conceito à produção, com qualidade em cada etapa.</p>
+    <div class="srv-grid rev">
+      <div class="srv-cell">
+        <div class="srv-num">01 —</div>
+        <div class="srv-title">Backend & APIs</div>
+        <p class="srv-body">Sistemas robustos, endpoints seguros e arquiteturas que escalam com o negócio.</p>
+        <ul class="srv-tags">
+          <li>Java / Spring Boot</li>
+          <li>Python / FastAPI</li>
+          <li>WebSockets</li>
+          <li>REST & integrações</li>
+        </ul>
+      </div>
+      <div class="srv-cell">
+        <div class="srv-num">02 —</div>
+        <div class="srv-title">Dev Apps & Web</div>
+        <p class="srv-body">Aplicativos e sistemas web modernos, responsivos e bem estruturados do zero.</p>
+        <ul class="srv-tags">
+          <li>HTML / CSS / JS</li>
+          <li>PHP + MySQL</li>
+          <li>Deploy (Vercel / VPS)</li>
+          <li>SEO técnico</li>
+        </ul>
+      </div>
+      <div class="srv-cell">
+        <div class="srv-num">03 —</div>
+        <div class="srv-title">Automação & IoT</div>
+        <p class="srv-body">Scripts inteligentes, bots e projetos embarcados que economizam tempo real.</p>
+        <ul class="srv-tags">
+          <li>Python scripts</li>
+          <li>n8n workflows</li>
+          <li>Arduino / C++</li>
+          <li>Web scraping</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ══════════════════════════════
+     CONTATO
+══════════════════════════════ -->
+<section id="contact" class="section">
+  <div class="wrap">
+    <div class="sec-lbl">Contato</div>
+    <div class="ct-grid">
+      <div class="rev">
+        <h2 class="ct-h">Vamos construir<br>algo <em>juntos?</em></h2>
+        <p class="ct-desc">
+          Estou aberto a projetos freelance, estágios ou só uma boa conversa
+          sobre tecnologia. Me chama!
+        </p>
+        <div class="ct-links">
+          <a href="mailto:pedrohztt30@gmail.com" class="ct-row">
+            <span class="ct-lbl">Email</span>
+            <span class="ct-val">pedrohztt30@gmail.com</span>
+            <span class="ct-arr">↗</span>
+          </a>
+          <a href="https://wa.me/5548991982782" class="ct-row" target="_blank">
+            <span class="ct-lbl">WhatsApp</span>
+            <span class="ct-val">+55 (48) 99198-2782</span>
+            <span class="ct-arr">↗</span>
+          </a>
+          <a href="https://github.com/ZanattaDev" class="ct-row" target="_blank">
+            <span class="ct-lbl">GitHub</span>
+            <span class="ct-val">github.com/ZanattaDev</span>
+            <span class="ct-arr">↗</span>
+          </a>
+          <a href="https://instagram.com/pedro_zanattaa" class="ct-row" target="_blank">
+            <span class="ct-lbl">Instagram</span>
+            <span class="ct-val">@pedro_zanattaa</span>
+            <span class="ct-arr">↗</span>
+          </a>
+        </div>
+      </div>
+<div class="rev">
+        <div class="form-title">Enviar mensagem</div>
+       
+        <!-- CORRIGIDO: Removido o Formspree e adicionado o id correto -->
+        <form id="contact-form">
+          <div class="ff">
+            <label>Nome</label>
+            <input type="text" name="nome" id="nome" placeholder="Seu nome" required>
+          </div>
+          <div class="ff">
+            <label>Email</label>
+            <input type="email" name="email" id="email" placeholder="seu@email.com" required>
+          </div>
+          <!-- NOVO: Adicionado o campo Assunto que o script do e-mail utiliza -->
+          <div class="ff">
+            <label>Assunto</label>
+            <input type="text" name="assunto" id="assunto" placeholder="Ex: Orçamento / Parceria" required>
+          </div>
+          <div class="ff">
+            <label>Mensagem</label>
+            <textarea name="mensagem" id="mensagem" placeholder="Olá! Gostaria de…" required></textarea>
+          </div>
+          <button type="submit" class="btn-s btn-solid btn-full">
+            Enviar mensagem →
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ══════════════════════════════
+     FOOTER
+══════════════════════════════ -->
+<footer>
+  <div class="wrap">
+    <div class="ft-inner">
+      <div class="ft-l">© 2026 /<em>Pedro Henrique Zanatta</em>/</div>
+      <div class="ft-r">Criciúma, SC · Brasil</div>
+    </div>
+  </div>
+</footer>
+<script src="script.js"></script>
+<script src="portfolio.js"></script>
 </body>
 </html>
