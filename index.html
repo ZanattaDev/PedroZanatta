@@ -3,174 +3,213 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pedro Henrique Zanatta | Full-Stack Developer</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <title>ZANATTA // IT TECHNICAL ARCHIVE</title>
+    
+    <!-- Google Fonts: Unbounded para títulos massivos, Syne para seções e Space Mono para metadados -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@700;800&family=Unbounded:wght@700;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome para Conectores Sociais -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-black text-white overflow-x-hidden">
+<body>
 
-    <!-- NAVBAR -->
-    <nav class="fixed top-0 left-0 right-0 z-50 glass">
-        <div class="max-w-7xl mx-auto px-8 py-6 flex justify-between items-center">
-            <div class="flex items-center gap-4">
-                <div class="w-10 h-10 bg-gradient-to-br from-emerald-400 to-cyan-400 rounded-2xl flex items-center justify-center text-2xl font-black">PZ</div>
-                <span class="text-2xl font-bold tracking-tighter heading">ZANATTA</span>
-            </div>
-            
-            <div class="hidden md:flex gap-10 text-sm font-medium">
-                <a href="#sobre" class="nav-link">Sobre</a>
-                <a href="#projetos" class="nav-link">Projetos</a>
-                <a href="#habilidades" class="nav-link">Habilidades</a>
-                <a href="#contato" class="nav-link">Contato</a>
-            </div>
+    <!-- Grid de Engenharia de Fundo -->
+    <div class="brutalist-grid-bg">
+        <div class="vector-lines"></div>
+        <div class="laser-stripe"></div>
+    </div>
 
-            <a href="https://wa.me/5548999999999" target="_blank"
-               class="flex items-center gap-3 bg-white text-black px-8 py-4 rounded-3xl font-semibold hover:bg-emerald-400 transition-all">
-                <i class="fab fa-whatsapp text-xl"></i>
-                <span>Conversar no WhatsApp</span>
+    <!-- Ticker de Transmissão Contínua (Status Técnico) -->
+    <div class="top-ticker">
+        <div class="ticker-stream">
+            <span>PEDRO H. ZANATTA // 16 ANOS // TÉCNICO EM INFORMÁTICA (2º ANO) // CEDUP ABÍLIO PAULO // PYTHON EXPERT // JAVA SPRING BOOT ARCHITECTURE // CORE_YEAR_2026 //</span>
+            <span>PEDRO H. ZANATTA // 16 ANOS // TÉCNICO EM INFORMÁTICA (2º ANO) // CEDUP ABÍLIO PAULO // PYTHON EXPERT // JAVA SPRING BOOT ARCHITECTURE // CORE_YEAR_2026 //</span>
+        </div>
+    </div>
+
+    <!-- Header Assíncrono Modulado -->
+    <header class="system-header">
+        <div class="header-matrix">
+            <a href="#" class="sys-brand">ZANATTA<span class="pulse-code">.SYS</span></a>
+            <nav class="sys-menu">
+                <a href="#manifesto">01 // MANIFESTO</a>
+                <a href="#stack">02 // TECH STACK</a>
+                <a href="#projects">03 // REPOSITÓRIOS</a>
+                <a href="#connect">04 // CONEXÃO</a>
+            </nav>
+            <a href="https://github.com/ZanattaDev" target="_blank" class="sys-gh-btn">
+                GITHUB PROFILE ↗
             </a>
         </div>
-    </nav>
+    </header>
 
-    <!-- HERO -->
-    <section class="hero min-h-screen flex items-center relative">
-        <div class="absolute inset-0 bg-[radial-gradient(at_center,#00ff9d10_0%,transparent_70%)]"></div>
-        
-        <div class="max-w-7xl mx-auto px-8 pt-32 grid md:grid-cols-2 gap-16 items-center relative z-10">
-            <div class="space-y-10">
-                <div class="inline-block px-6 py-3 border border-emerald-500/30 rounded-full text-emerald-400 text-sm font-medium tracking-widest">
-                    DISPONÍVEL PARA NOVOS PROJETOS
+    <main class="viewport-stream">
+
+        <!-- HERO SECTION (Pôster Brutalista de Entrada) -->
+        <section class="hero-block">
+            <div class="hero-container">
+                <div class="hero-meta-col">
+                    <span class="geo-tag">CRICIÚMA // SC // BRASIL</span>
+                    <h1 class="hero-main-title">CONSTRUINDO ALGORITMOS DE ALTA VOLTAGEM.</h1>
                 </div>
+                <div class="hero-desc-col">
+                    <p class="hero-abstract">
+                        Desenvolvedor de software focado em automação com Inteligência Artificial, arquiteturas robustas de microsserviços em Java e motores de processamento de dados em tempo real.
+                    </p>
+                    <div class="hero-terminal-actions">
+                        <a href="#projects" class="action-tile tile-dark">VER REPOSITÓRIOS</a>
+                        <a href="https://github.com/ZanattaDev" target="_blank" class="action-tile tile-red">CONECTAR CONSOLE</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 1: MANIFESTO -->
+        <section id="manifesto" class="scroll-section section-manifesto">
+            <div class="section-divider-title">
+                <span class="section-index">[01]</span>
+                <h2>DIRETRIZ DE ENGENHARIA</h2>
+            </div>
+            <div class="manifesto-grid">
+                <div class="manifesto-statement">
+                    <p>Com apenas 16 anos, encaro o código como engenharia purista. Eu transformo dados complexos em automações lógicas funcionais.</p>
+                </div>
+                <div class="manifesto-body">
+                    <p>Atualmente no 2º ano do curso Técnico em Informática no CEDUP Abílio Paulo, desenvolvo soluções independentes que unem a flexibilidade e automação do ecossistema Python à solidez corporativa do Java com Spring Boot. Minha abordagem elimina processos lentos e foca em performance de microsserviços, inteligência artificial aplicada e sistemas escaláveis de controle de dados.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 2: TECH STACK -->
+        <section id="stack" class="scroll-section section-stack">
+            <div class="section-divider-title">
+                <span class="section-index">[02]</span>
+                <h2>MATRIZ TECNOLÓGICA</h2>
+            </div>
+            <div class="stack-table">
+                <div class="stack-row">
+                    <span class="stack-id">A//</span>
+                    <div class="stack-core">
+                        <span class="stack-title">BACKEND DEVELOPMENT</span>
+                        <span class="stack-sub">Java, Spring Boot, Python, RESTful APIs, Microsserviços</span>
+                    </div>
+                </div>
+                <div class="stack-row">
+                    <span class="stack-id">B//</span>
+                    <div class="stack-core">
+                        <span class="stack-title">AI & INTELLIGENT SYSTEMS</span>
+                        <span class="stack-sub">Automação de Processos, Engines de Distribuição de Dados, Motores de Voz Customizados</span>
+                    </div>
+                </div>
+                <div class="stack-row">
+                    <span class="stack-id">C//</span>
+                    <div class="stack-core">
+                        <span class="stack-title">DATA SCIENCE & REPOSITORIES</span>
+                        <span class="stack-sub">Análise de Dados, SQL, Git/GitHub, Estruturas Relacionais</span>
+                    </div>
+                </div>
+                <div class="stack-row">
+                    <span class="stack-id">D//</span>
+                    <div class="stack-core">
+                        <span class="stack-title">FRONTEND INTERFACES</span>
+                        <span class="stack-sub">HTML5, CSS3 Brutalism, JavaScript Moderno, Painéis Administrativos Avançados</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 3: PROJETOS REAIS -->
+        <section id="projects" class="scroll-section section-projects">
+            <div class="section-divider-title">
+                <span class="section-index">[03]</span>
+                <h2>ARQUIVO DE PRODUÇÃO // REPOSITÓRIOS</h2>
+            </div>
+            <div class="projects-bento-grid">
                 
-                <h1 class="text-7xl md:text-8xl font-bold leading-none tracking-tighter heading">
-                    PEDRO HENRIQUE<br>
-                    <span class="bg-gradient-to-r from-emerald-400 via-cyan-300 to-violet-400 bg-clip-text text-transparent">ZANATTA</span>
-                </h1>
-                
-                <p class="text-2xl text-gray-300 max-w-lg">
-                    Full-Stack Developer que transforma ideias em experiências digitais excepcionais.
-                </p>
-
-                <div class="flex gap-5">
-                    <a href="#projetos" 
-                       class="px-10 py-6 bg-emerald-500 text-black rounded-3xl font-semibold text-lg hover:scale-105 transition-all flex items-center gap-3">
-                        Ver meus projetos
-                        <i class="fas fa-arrow-down"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div class="relative">
-                <img src="https://picsum.photos/id/1015/800/900" alt="Pedro Zanatta" 
-                     class="w-full rounded-[3rem] shadow-2xl border border-white/10">
-            </div>
-        </div>
-    </section>
-
-    <!-- SOBRE -->
-    <section id="sobre" class="py-32 bg-zinc-950">
-        <div class="max-w-7xl mx-auto px-8">
-            <div class="grid md:grid-cols-12 gap-20 items-center">
-                <div class="md:col-span-5">
-                    <span class="text-emerald-400 font-mono tracking-[4px] text-sm">CAPÍTULO 01</span>
-                    <h2 class="heading text-6xl font-bold mt-4 leading-tight">Eu crio o que o futuro precisa.</h2>
-                </div>
-                <div class="md:col-span-7 text-lg text-gray-300 leading-relaxed space-y-8">
-                    <p>Sou desenvolvedor full-stack apaixonado por tecnologia e impacto social. Desenvolvo sistemas completos que resolvem problemas reais.</p>
-                    <p>Do conceito à produção, busco sempre o equilíbrio perfeito entre performance, design e experiência do usuário.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- HABILIDADES -->
-    <section id="habilidades" class="py-32">
-        <div class="max-w-7xl mx-auto px-8">
-            <h2 class="heading text-6xl font-bold text-center mb-20">Tecnologias que domino</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                <div class="tech-card">React / Next.js</div>
-                <div class="tech-card">Node.js &amp; Express</div>
-                <div class="tech-card">Java / Spring Boot</div>
-                <div class="tech-card">React Native</div>
-                <div class="tech-card">Tailwind CSS</div>
-                <div class="tech-card">PostgreSQL / MongoDB</div>
-                <div class="tech-card">Docker &amp; AWS</div>
-                <div class="tech-card">UI/UX Design</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PROJETOS -->
-    <section id="projetos" class="py-32 bg-zinc-950">
-        <div class="max-w-7xl mx-auto px-8">
-            <h2 class="heading text-6xl font-bold text-center mb-20">Projetos em Destaque</h2>
-            
-            <div class="grid md:grid-cols-2 gap-12">
-                <!-- Mercado Solidário -->
-                <div class="project-card group">
-                    <div class="overflow-hidden rounded-3xl">
-                        <img src="https://picsum.photos/id/201/1200/700" class="w-full transition-all group-hover:scale-110 duration-700" alt="Mercado Solidário">
+                <!-- Card Projeto 1: Distribuição Logística -->
+                <div class="project-brutalist-card card-tilt-left">
+                    <div class="project-header">
+                        <span class="project-type">ENGINE LOGÍSTICA // JAVA</span>
+                        <span class="project-status">PRODUÇÃO</span>
                     </div>
-                    <div class="mt-8">
-                        <h3 class="text-4xl font-semibold">Mercado Solidário</h3>
-                        <p class="text-gray-400 mt-4 text-lg">Plataforma completa que conecta produtores da economia solidária com compradores institucionais e famílias, promovendo comércio justo e distribuição inteligente de alimentos.</p>
-                        <div class="flex gap-3 mt-8">
-                            <span class="tag">React Native</span>
-                            <span class="tag">Node.js</span>
-                            <span class="tag">IA Logística</span>
-                        </div>
+                    <div class="project-body">
+                        <h3>MOTOR DE DISTRIBUIÇÃO REAIS</h3>
+                        <p>Desenvolvimento de backend com microsserviços e Java Spring Boot para processamento inteligente de distribuição em tempo real, projetado para o gerenciamento otimizado de fluxos de dados e cargas complexas.</p>
+                    </div>
+                    <div class="project-footer-links">
+                        <span class="tech-badge">Java</span>
+                        <span class="tech-badge">Spring Boot</span>
+                        <a href="https://github.com/ZanattaDev" target="_blank" class="project-arrow-link">REPOSITÓRIO ↗</a>
                     </div>
                 </div>
 
-                <!-- Projeto 2 -->
-                <div class="project-card group">
-                    <div class="overflow-hidden rounded-3xl">
-                        <img src="https://picsum.photos/id/237/1200/700" class="w-full transition-all group-hover:scale-110 duration-700" alt="Projeto 2">
+                <!-- Card Projeto 2: Assistente de Voz Python -->
+                <div class="project-brutalist-card card-tilt-right">
+                    <div class="project-header">
+                        <span class="project-type">AI AUTOMATION // PYTHON</span>
+                        <span class="project-status">ATIVO</span>
                     </div>
-                    <div class="mt-8">
-                        <h3 class="text-4xl font-semibold">Sistema de Participações</h3>
-                        <p class="text-gray-400 mt-4 text-lg">Plataforma de gestão de projetos sociais com dashboard em tempo real, relatórios e controle de voluntários.</p>
-                        <div class="flex gap-3 mt-8">
-                            <span class="tag">Next.js</span>
-                            <span class="tag">Supabase</span>
-                            <span class="tag">Tailwind</span>
-                        </div>
+                    <div class="project-body">
+                        <h3>PERSONAL VIRTUAL ASSISTANT</h3>
+                        <p>Desenvolvimento de um ecossistema de automação residencial e pessoal controlado por voz via Python. Integração de scripts nativos para execução rápida de comandos diretamente no sistema operacional.</p>
+                    </div>
+                    <div class="project-footer-links">
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">Speech Engine</span>
+                        <a href="https://github.com/ZanattaDev" target="_blank" class="project-arrow-link">REPOSITÓRIO ↗</a>
                     </div>
                 </div>
+
+                <!-- Card Projeto 3: Plataforma Administrativa -->
+                <div class="project-brutalist-card card-tilt-left">
+                    <div class="project-header">
+                        <span class="project-type">FULLSTACK PLATFORM // WEB</span>
+                        <span class="project-status">FINALIZADO</span>
+                    </div>
+                    <div class="project-body">
+                        <h3>CLOTHING E-COMMERCE & ADMIN</h3>
+                        <p>Interface completa de comércio eletrônico integrada a um painel administrativo analítico complexo. Gerenciamento de inventário dinâmico, atualização de banco de dados e controle total de permissões.</p>
+                    </div>
+                    <div class="project-footer-links">
+                        <span class="tech-badge">JavaScript</span>
+                        <span class="tech-badge">Admin Panel</span>
+                        <a href="https://github.com/ZanattaDev" target="_blank" class="project-arrow-link">REPOSITÓRIO ↗</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SEÇÃO 4: CONEXÃO TERMINAL -->
+        <section id="connect" class="scroll-section section-connect">
+            <div class="section-divider-title">
+                <span class="section-index">[04]</span>
+                <h2>ESTABELECER CONEXÃO SÓLIDA</h2>
+            </div>
+            <div class="connect-industrial-banner">
+                <div class="connect-core-text">
+                    <h3>CONSOLE ACCESS OPEN</h3>
+                    <p>Repositórios, códigos-fonte e arquiteturas completas documentadas publicamente. Acesse o console e conecte-se ao ecossistema de desenvolvimento.</p>
+                </div>
+                <div class="connect-action-zone">
+                    <a href="https://github.com/ZanattaDev" target="_blank" class="connect-square-btn">GITHUB PROFILE ↗</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER PREMIUM INDUSTRIAL -->
+    <footer class="system-footer">
+        <div class="footer-matrix-wrap">
+            <span class="footer-terminal-code">// REPO: PEDROZANATTA_2026 // AGE_16_YEAR_2</span>
+            <div class="signature-block">
+                <span class="sig-label">DEVELOPER BY</span>
+                <span class="sig-name">PEDRO_ZANATTAA</span>
             </div>
         </div>
-    </section>
+    </footer>
 
-    <!-- CONTATO -->
-    <section id="contato" class="py-32 border-t border-white/10">
-        <div class="max-w-4xl mx-auto px-8 text-center">
-            <h2 class="heading text-7xl font-bold mb-6">Vamos construir algo incrível?</h2>
-            <p class="text-2xl text-gray-400 mb-16">Estou aberto a novos desafios e parcerias.</p>
-            
-            <div class="flex flex-col md:flex-row gap-8 justify-center">
-                <a href="mailto:pedrohenriquezanattacontato@gmail.com" 
-                   class="contact-btn">
-                    <i class="fas fa-envelope text-4xl"></i>
-                    <div>
-                        <span class="block text-xl font-semibold">Enviar E-mail</span>
-                        <span class="text-emerald-400 text-sm">pedrohenriquezanattacontato@gmail.com</span>
-                    </div>
-                </a>
-                
-                <a href="https://wa.me/5548999999999" target="_blank" 
-                   class="contact-btn">
-                    <i class="fab fa-whatsapp text-4xl"></i>
-                    <div>
-                        <span class="block text-xl font-semibold">WhatsApp</span>
-                        <span class="text-emerald-400 text-sm">(48) 99999-9999</span>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <script src="script.js"></script>
 </body>
 </html>
