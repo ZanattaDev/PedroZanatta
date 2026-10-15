@@ -3,105 +3,310 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#080808">
-  <meta name="description" content="Pedro Henrique Zanatta — Desenvolvedor FullStack e Dev Apps. Java, Python, JavaScript, PHP, C/C++, Lua e MySQL.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f6f5f2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0c0c0d" media="(prefers-color-scheme: dark)">
+  <meta name="description" content="Pedro Zanatta — desenvolvedor backend em Criciúma/SC. Sistemas de gestão, APIs e integrações em Node.js, Java e SQL. Aprendendo Swift e SwiftUI.">
   <meta name="author" content="Pedro Henrique Zanatta">
-  <title>Pedro Zanatta — FullStack Developer</title>
+  <meta property="og:title" content="Pedro Zanatta — Desenvolvedor backend">
+  <meta property="og:description" content="Sistemas de gestão, APIs e integrações. Aprendendo Swift.">
+  <meta property="og:image" content="assets/projetos/odonto-os.jpg">
+  <title>Pedro Zanatta — Desenvolvedor backend</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23e8492c'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' dominant-baseline='middle' font-family='Arial' font-weight='700' font-size='30' fill='white'%3Epz%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="portfolio.css">
 </head>
 <body>
-  <div id="page-loader"><div class="loader-code">INITIALIZING <span>PORTFOLIO</span>_</div><div class="loader-bar"><i></i></div></div>
-  <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
-  <div class="grid-overlay"></div>
-  <div id="cur"></div><div id="cur-ring"></div>
+  <canvas id="webgl" aria-hidden="true"></canvas>
 
-  <nav id="nav" aria-label="Navegação principal">
+  <header id="nav">
     <div class="nav-inner">
-      <a href="#home" class="nav-logo">/<em>PedroZanatta</em>/</a>
-      <ul class="nav-links">
-        <li><a href="#about">Sobre</a></li><li><a href="#skills">Skills</a></li><li><a href="#projects">Projetos</a></li><li><a href="#services">Serviços</a></li><li><a href="#contact">Contato</a></li>
-      </ul>
-      <div class="nav-pill"><span class="dot-green"></span><span>Disponível</span></div>
+      <a href="#home" class="logo" aria-label="Início">pedro<span>zanatta</span></a>
+      <nav aria-label="Navegação principal">
+        <ul class="nav-links">
+          <li><a href="#about">Sobre</a></li>
+          <li><a href="#focus">O que faço</a></li>
+          <li><a href="#stack">Stack</a></li>
+          <li><a href="#projects">Projetos</a></li>
+          <li><a href="#contact">Contato</a></li>
+        </ul>
+      </nav>
+      <a href="https://github.com/ZanattaDev" class="nav-gh" target="_blank" rel="noreferrer" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 .5a11.5 11.5 0 0 0-3.64 22.4c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.04 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.23 2.75.11 3.04.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.39-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>
+      </a>
+      <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span></button>
     </div>
-  </nav>
+  </header>
 
   <main>
-    <section id="home">
-      <div class="wrap hero-inner">
-        <div class="hero-eyebrow"><span class="ey-line"></span><span class="ey-txt">Criciúma, SC · FullStack Developer · 16y</span></div>
-        <div class="hero-command">&gt;_ <span id="command-text">build --something-useful</span><span class="command-caret"></span></div>
-        <h1 class="hero-h1">Construindo sistemas<br><em>que funcionam</em><br>para <span id="typing-text"></span></h1>
-        <p class="hero-desc">Desenvolvedor FullStack apaixonado por tecnologia. Crio backends robustos, automações inteligentes e interfaces que fazem sentido — do servidor até a tela.</p>
-        <div class="hero-btns"><a href="#projects" class="btn-s btn-solid">Ver projetos <span>↗</span></a><a href="#contact" class="btn-s btn-outline">Fale comigo <span>→</span></a></div>
-
-        <div class="hero-terminal">
-          <div class="terminal-top"><span></span><span></span><span></span><b>pedro@zanatta:~/portfolio</b><i>● ONLINE</i></div>
-          <div class="terminal-body">
-            <p><strong>$</strong> whoami</p><p class="dim">Pedro Zanatta · FullStack Developer</p>
-            <p><strong>$</strong> stack --active</p><p class="dim">Java · Python · JS/TS · PHP · Lua · C/C++ · MySQL</p>
-            <p><strong>$</strong> status</p><p class="ok">● disponível para construir algo novo<span class="terminal-caret"></span></p>
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="hero-hi" data-intro>Oi, eu sou o</p>
+          <h1 class="hero-title"><span class="line"><span data-intro-line>Pedro Zanatta.</span></span></h1>
+          <p class="hero-lead" data-intro>Desenvolvo <strong>backend</strong>: sistemas de gestão, APIs e integrações que empresas usam no dia a dia. Agora estou aprendendo <strong class="accent">Swift</strong> para levar esses sistemas para o iPhone.</p>
+          <div class="hero-actions" data-intro>
+            <a href="#projects" class="btn btn-primary">Ver projetos</a>
+            <a href="#contact" class="btn btn-ghost">Entrar em contato</a>
           </div>
-        </div>
-
-        <div class="hero-foot">
-          <div class="stats"><div class="stat"><div class="stat-n">20+</div><div class="stat-l">Repositórios</div></div><div class="stat"><div class="stat-n">2+</div><div class="stat-l">Anos estudando dev</div></div><div class="stat"><div class="stat-n">7+</div><div class="stat-l">Linguagens</div></div></div>
-          <div class="socials"><a href="https://github.com/ZanattaDev" class="soc" target="_blank" rel="noreferrer">GitHub</a><a href="https://wa.me/5548991982782" class="soc" target="_blank" rel="noreferrer">WhatsApp</a><a href="mailto:pedrohztt30@gmail.com" class="soc">Email</a><a href="https://instagram.com/pedro_zanattaa" class="soc" target="_blank" rel="noreferrer">Instagram</a></div>
+          <p class="hero-status" data-intro><span class="dot"></span>Aberto a estágio e freelas · Criciúma, SC</p>
         </div>
       </div>
-      <div class="hero-side-code" aria-hidden="true"><span>const</span> developer = {<br>&nbsp;&nbsp;name: <em>'Pedro Zanatta'</em>,<br>&nbsp;&nbsp;focus: <em>'fullstack'</em>,<br>&nbsp;&nbsp;coffee: <em>true</em><br>};</div>
-      <div class="scroll-hint">SCROLL <span>↓</span></div>
     </section>
 
+    <!-- MARQUEE -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Node.js</span><i>/</i><span>Swift</span><i>/</i><span>SQL</span><i>/</i><span>APIs REST</span><i>/</i><span>SwiftUI</span><i>/</i><span>Java</span><i>/</i><span>TypeScript</span><i>/</i><span>Node.js</span><i>/</i><span>Swift</span><i>/</i><span>SQL</span><i>/</i>
+      </div>
+    </div>
+
+    <!-- SOBRE -->
     <section id="about" class="section">
-      <div class="wrap">
-        <div class="sec-lbl">01 · Sobre mim</div>
-        <div class="about-grid rev">
-          <div class="about-left">
-            <div class="about-photo-wrap"><div class="about-photo"><img src="https://avatars.githubusercontent.com/u/191162849?v=4" alt="Pedro Henrique Zanatta" loading="lazy"></div><span class="photo-index">/ 01</span></div>
-            <div class="about-cards">
-              <div class="acard"><div class="acard-l">Educação</div><div class="acard-v">Técnico em Informática<br>CEDUP Abílio Paulo</div></div>
-              <div class="acard"><div class="acard-l">Localização</div><div class="acard-v">Criciúma, SC — Brasil</div></div>
-              <div class="acard"><div class="acard-l">Status</div><div class="acard-v available">● Disponível para projetos</div></div>
+      <div class="wrap about-grid">
+        <div class="about-spacer" aria-hidden="true"></div>
+        <div class="about-copy">
+          <h2 class="sec-title" data-reveal>Sobre mim</h2>
+          <div class="about-text" data-reveal>
+            <p>Comecei mexendo em servidor de FiveM, escrevendo script em Lua e quebrando banco de dados. Foi aí que percebi que gosto mais do que acontece por trás da tela do que da tela em si.</p>
+            <p>Hoje faço sistemas para empresas de verdade: um ERP para uma empresa de equipamentos odontológicos, o site e o app de uma construtora, uma plataforma para um escritório de advocacia. Estudo Técnico em Informática no CEDUP Abílio Paulo e, nas horas vagas, estou aprendendo Swift.</p>
+          </div>
+
+          <div class="profile" data-reveal>
+            <img src="https://avatars.githubusercontent.com/u/191162849?v=4" alt="Foto de Pedro Henrique Zanatta" width="56" height="56" loading="lazy">
+            <div>
+              <b>Pedro Henrique Zanatta</b>
+              <span>Técnico em Informática · CEDUP Abílio Paulo</span>
             </div>
           </div>
-          <div class="about-right">
-            <div class="section-intro"><span>ABOUT.LOG</span><h2 class="sec-h">Código com <em>propósito.</em></h2></div>
-            <div class="about-text"><p>Olá! Sou Pedro Henrique Zanatta, de Criciúma, Santa Catarina. Desenvolvedor FullStack com foco em backends robustos, desenvolvimento de aplicativos e sistemas completos.</p><p>Estudo Técnico em Informática no CEDUP Abílio Paulo e trabalho com Java, Python, PHP, C/C++, JavaScript/TypeScript, Lua e MySQL. Gosto de entender o problema antes de escrever a primeira linha de código.</p><p>Minha meta é transformar ideias em software funcional, bem estruturado e com uma experiência que também seja agradável de usar.</p></div>
-            <a href="javascript:void(0)" class="btn-s btn-outline cv-btn" id="cv-button">Baixar currículo <span>↓</span></a>
-            <div class="detail-table"><div class="drow"><span class="dk">Idade</span><span>16 anos</span></div><div class="drow"><span class="dk">Experiência</span><span>2+ anos estudando desenvolvimento</span></div><div class="drow"><span class="dk">Foco</span><span>Backend · Dev Apps · FullStack</span></div><div class="drow"><span class="dk">Idiomas</span><span>Português · Inglês</span></div><div class="drow"><span class="dk">Disponibilidade</span><span>Freelance / Estágio</span></div></div>
+
+          <dl class="facts" data-reveal>
+            <div><dt>Foco</dt><dd>Backend e iOS</dd></div>
+            <div><dt>Base</dt><dd>Criciúma, SC</dd></div>
+            <div><dt>Idiomas</dt><dd>Português e inglês</dd></div>
+            <div><dt>Procurando</dt><dd>Estágio ou freela</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- O QUE FAÇO -->
+    <section id="focus" class="section">
+      <div class="wrap">
+        <h2 class="sec-title" data-reveal>O que eu faço</h2>
+        <p class="sec-sub" data-reveal>Backend é o que faço todo dia. Swift é o que estou aprendendo agora, e a ideia é juntar os dois: o app no iPhone conversando com a API que eu mesmo escrevi.</p>
+
+        <div class="focus-grid">
+          <article class="panel" data-reveal>
+            <header class="panel-head">
+              <h3>Backend</h3>
+              <span class="badge">Dia a dia</span>
+            </header>
+            <ul class="checklist">
+              <li>APIs REST em Node.js (Express, NestJS) e Java</li>
+              <li>Banco de dados: PostgreSQL, MySQL, SQLite e Supabase</li>
+              <li>Login com JWT, permissões por usuário e Row Level Security</li>
+              <li>Integrações: Mercado Livre, WhatsApp e Google Calendar</li>
+            </ul>
+            <div class="code" role="img" aria-label="Exemplo de rota em Express">
+              <div class="code-top"><span>routes/ordens.js</span></div>
+<pre><code><span class="t-kw">router</span>.<span class="t-fn">get</span>(<span class="t-str">'/ordens'</span>, requireAuth, <span class="t-kw">async</span> (req, res) =&gt; {
+  <span class="t-kw">const</span> ordens = <span class="t-kw">await</span> db.<span class="t-fn">all</span>(
+    <span class="t-str">`SELECT * FROM ordens_servico
+     WHERE status = ? ORDER BY aberta_em DESC`</span>,
+    req.query.status ?? <span class="t-str">'aberta'</span>
+  );
+  res.<span class="t-fn">json</span>(ordens);
+});</code></pre>
+            </div>
+          </article>
+
+          <article class="panel" data-reveal>
+            <header class="panel-head">
+              <h3>Swift e iOS</h3>
+              <span class="badge badge-accent">Aprendendo</span>
+            </header>
+            <ul class="roadmap">
+              <li class="done"><i></i>Fundamentos de Swift<small>structs, optionals, protocols</small></li>
+              <li class="done"><i></i>Primeiro app em SwiftUI<small>app da Atus Reformas</small></li>
+              <li class="doing"><i></i>Networking<small>URLSession + async/await</small></li>
+              <li><i></i>Persistência local<small>SwiftData</small></li>
+              <li><i></i>Publicar na App Store<small>a meta</small></li>
+            </ul>
+            <div class="code" role="img" aria-label="Exemplo de código Swift">
+              <div class="code-top"><span>DataService.swift</span></div>
+<pre><code><span class="t-kw">func</span> <span class="t-fn">carregarProjetos</span>() <span class="t-kw">async throws</span> -&gt; [<span class="t-ty">Projeto</span>] {
+  <span class="t-kw">let</span> url = base.<span class="t-fn">appending</span>(path: <span class="t-str">"projetos.json"</span>)
+  <span class="t-kw">let</span> (data, _) = <span class="t-kw">try await</span> <span class="t-ty">URLSession</span>.shared.<span class="t-fn">data</span>(from: url)
+  <span class="t-kw">return try</span> <span class="t-ty">JSONDecoder</span>().<span class="t-fn">decode</span>([<span class="t-ty">Projeto</span>].<span class="t-kw">self</span>, from: data)
+}</code></pre>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- STACK (ícones 3D) -->
+    <section id="stack" class="stack">
+      <div class="wrap stack-inner">
+        <div class="stack-head">
+          <h2 class="sec-title">Stack</h2>
+          <p class="stack-hint">Role a página ou use as setas</p>
+        </div>
+
+        <div class="stack-info" aria-live="polite">
+          <span class="stack-cat" id="tech-cat"></span>
+          <h3 class="stack-name" id="tech-name">Swift</h3>
+          <p class="stack-desc" id="tech-desc"></p>
+          <div class="stack-ctrl">
+            <button class="round-btn" id="tech-prev" aria-label="Tecnologia anterior">←</button>
+            <span class="stack-count"><b id="tech-idx">1</b> de <span id="tech-total">8</span></span>
+            <button class="round-btn" id="tech-next" aria-label="Próxima tecnologia">→</button>
           </div>
         </div>
+
+        <ul class="stack-list" id="tech-list" aria-label="Todas as tecnologias"></ul>
       </div>
     </section>
 
-    <section id="skills" class="section">
-      <div class="wrap"><div class="sec-lbl">02 · Habilidades</div><h2 class="sec-h">Meu <em>stack.</em></h2><p class="sec-sub">Ferramentas que uso para transformar problemas em sistemas.</p>
-        <div class="skill-terminal rev"><div class="terminal-top"><span></span><span></span><span></span><b>skills.json</b></div><div class="skill-code"><span>{</span><div>"backend": [<em>"Java", "Python", "PHP", "Lua"</em>],</div><div>"frontend": [<em>"HTML", "CSS", "JS/TS"</em>],</div><div>"systems": [<em>"C/C++", "Arduino", "MySQL"</em>],</div><div>"tools": [<em>"Git", "GitHub", "n8n"</em>]</div><span>}</span></div></div>
-        <div class="sk-grid rev">
-          <div class="sk-cat"><div class="sk-cat-title">Backend</div><div class="sk-row"><span>Java / Spring Boot</span><div class="sk-right"><div class="sk-track"><i data-w="80"></i></div><small>80</small></div></div><div class="sk-row"><span>Python</span><div class="sk-right"><div class="sk-track"><i data-w="85"></i></div><small>85</small></div></div><div class="sk-row"><span>PHP</span><div class="sk-right"><div class="sk-track"><i data-w="75"></i></div><small>75</small></div></div><div class="sk-row"><span>MySQL</span><div class="sk-right"><div class="sk-track"><i data-w="80"></i></div><small>80</small></div></div><div class="sk-row"><span>Lua</span><div class="sk-right"><div class="sk-track"><i data-w="70"></i></div><small>70</small></div></div></div>
-          <div class="sk-cat"><div class="sk-cat-title">Frontend / Systems</div><div class="sk-row"><span>HTML & CSS</span><div class="sk-right"><div class="sk-track"><i data-w="88"></i></div><small>88</small></div></div><div class="sk-row"><span>JavaScript / TypeScript</span><div class="sk-right"><div class="sk-track"><i data-w="78"></i></div><small>78</small></div></div><div class="sk-row"><span>C / C++ / Arduino</span><div class="sk-right"><div class="sk-track"><i data-w="72"></i></div><small>72</small></div></div><div class="sk-row"><span>Git & GitHub</span><div class="sk-right"><div class="sk-track"><i data-w="85"></i></div><small>85</small></div></div><div class="sk-row"><span>n8n / Automação</span><div class="sk-right"><div class="sk-track"><i data-w="65"></i></div><small>65</small></div></div></div>
-        </div>
-      </div>
-    </section>
-
+    <!-- PROJETOS -->
     <section id="projects" class="section">
-      <div class="wrap"><div class="sec-lbl">03 · Projetos</div><h2 class="sec-h">Coisas que <em>construí.</em></h2><p class="sec-sub">Projetos, experimentos e sistemas que mostram como eu penso enquanto desenvolvo.</p>
-        <div class="project-feature rev"><div class="project-number">01</div><div><span class="project-type">PERSONAL · WEB</span><h3>PedroZanatta Portfolio</h3><p>O próprio portfólio: HTML, CSS e JavaScript puro, com foco em performance, tipografia, microinterações e experiência.</p><div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div></div><a href="https://github.com/ZanattaDev/PedroZanatta" target="_blank" rel="noreferrer" aria-label="Abrir projeto">↗</a></div>
-        <div class="proj-list rev"><a class="proj-item" href="https://github.com/ZanattaDev" target="_blank" rel="noreferrer"><span class="proj-num">02</span><div><b>FiveM / Sistemas RP</b><p>Scripts, HUDs, integrações, telefone e sistemas para servidores base Creative.</p></div><span>↗</span></a><a class="proj-item" href="https://github.com/ZanattaDev" target="_blank" rel="noreferrer"><span class="proj-num">03</span><div><b>Automação & Ferramentas</b><p>Projetos em Python, integrações, automações e ferramentas para resolver tarefas repetitivas.</p></div><span>↗</span></a><a class="proj-item" href="https://github.com/ZanattaDev" target="_blank" rel="noreferrer"><span class="proj-num">04</span><div><b>IoT / Arduino</b><p>Experimentos com C/C++, sensores e dispositivos conectados.</p></div><span>↗</span></a><a class="proj-item" href="https://github.com/ZanattaDev" target="_blank" rel="noreferrer"><span class="proj-num">05</span><div><b>Apps & Backend</b><p>APIs, bancos de dados e aplicações completas com foco em arquitetura.</p></div><span>↗</span></a></div>
+      <div class="wrap">
+        <h2 class="sec-title" data-reveal>Projetos</h2>
+        <p class="sec-sub" data-reveal>Os que estou mantendo agora. Alguns são de clientes e o código é privado, mas posso mostrar rodando numa conversa.</p>
+
+        <!-- Odontocril -->
+        <article class="case" data-reveal>
+          <div class="case-media">
+            <figure class="browser">
+              <div class="browser-bar"><i></i><i></i><i></i><span>odontocril · ordens de serviço</span></div>
+              <img src="assets/projetos/odonto-os.jpg" alt="Tela de ordens de serviço do sistema Odontocril" loading="lazy" width="1600" height="1000">
+            </figure>
+            <figure class="browser browser-small">
+              <div class="browser-bar"><i></i><i></i><i></i><span>integração Mercado Livre</span></div>
+              <img src="assets/projetos/odonto-ml.jpg" alt="Painel de vendas do Mercado Livre dentro do Odontocril" loading="lazy" width="1600" height="1000">
+            </figure>
+          </div>
+          <div class="case-body">
+            <p class="case-meta">Cliente · Node.js · 2026</p>
+            <h3>Odontocril</h3>
+            <p>Sistema de gestão de uma empresa que vende e conserta equipamentos odontológicos. Tem ordens de serviço com número de série, orçamentos, estoque, notas fiscais, site com abertura de chamado e uma integração com a API do Mercado Livre (OAuth, webhooks e sincronização de pedidos).</p>
+            <ul class="case-points">
+              <li>Node.js + Express + SQLite, sem framework pesado</li>
+              <li>Perfis e permissões por função (técnico, recepção, financeiro)</li>
+              <li>185 verificações no teste automatizado</li>
+            </ul>
+            <div class="tags"><span>Node.js</span><span>Express</span><span>SQLite</span><span>JWT</span><span>API Mercado Livre</span></div>
+            <p class="case-link muted">Repositório privado</p>
+          </div>
+        </article>
+
+        <!-- Atus Reformas -->
+        <article class="case case-reverse" data-reveal>
+          <div class="case-media case-media-ios">
+            <figure class="browser">
+              <div class="browser-bar"><i></i><i></i><i></i><span>atusreformas.com.br</span></div>
+              <img src="assets/projetos/atus-site.jpg" alt="Site da Atus Reformas" loading="lazy" width="1600" height="1000">
+            </figure>
+            <div class="phones">
+              <figure class="phone"><img src="assets/projetos/atus-ios-1.jpg" alt="App iOS da Atus Reformas, tela inicial" loading="lazy" width="506" height="1100"></figure>
+              <figure class="phone"><img src="assets/projetos/atus-ios-2.jpg" alt="App iOS da Atus Reformas, lista de projetos" loading="lazy" width="506" height="1100"></figure>
+            </div>
+          </div>
+          <div class="case-body">
+            <p class="case-meta">Cliente · Swift · 2026</p>
+            <h3>Atus Reformas</h3>
+            <p>Site e app iOS para uma empresa de restauração de fachadas aqui de Criciúma. Os dois leem os mesmos arquivos JSON: cadastrou uma obra nova, ela aparece no site e no app. O pedido de orçamento sai pronto no WhatsApp da empresa.</p>
+            <ul class="case-points">
+              <li>App em SwiftUI com Observation e <code>Codable</code></li>
+              <li>Funciona offline com dados embutidos e atualiza pela internet</li>
+              <li>Site sem framework, com SEO local e modo escuro</li>
+            </ul>
+            <div class="tags"><span>Swift</span><span>SwiftUI</span><span>HTML/CSS/JS</span><span>JSON</span></div>
+            <p class="case-link muted">Site e app em fase final de entrega</p>
+          </div>
+        </article>
+
+        <!-- Outros -->
+        <div class="more-grid">
+          <a class="card" href="https://github.com/ZanattaDev/manager-ai" target="_blank" rel="noreferrer" data-reveal>
+            <p class="case-meta">Pessoal · TypeScript</p>
+            <h3>Manager AI</h3>
+            <p>Gerenciador de tarefas, hábitos, agenda e finanças. Monorepo com API em NestJS, Prisma e PostgreSQL, web em Next.js e app em Expo. Login com JWT e separação por tenant.</p>
+            <div class="tags"><span>NestJS</span><span>Prisma</span><span>PostgreSQL</span><span>Docker</span></div>
+            <span class="card-link">GitHub ↗</span>
+          </a>
+          <article class="card" data-reveal>
+            <p class="case-meta">Cliente · TypeScript</p>
+            <h3>Plataforma jurídica</h3>
+            <p>Site institucional e sistema de gestão de um escritório de advocacia. O contato do site vira lead no CRM por uma API com chave, validação de origem e limite por IP.</p>
+            <div class="tags"><span>Next.js</span><span>Supabase</span><span>React</span><span>PL/pgSQL</span></div>
+            <span class="card-link muted">Repositório privado</span>
+          </article>
+          <a class="card" href="https://github.com/ZanattaDev/Governo-App-Site" target="_blank" rel="noreferrer" data-reveal>
+            <p class="case-meta">Acadêmico · JavaScript</p>
+            <h3>ConectaGov</h3>
+            <p>Protótipo de portal de governo digital. Login por CPF com bcrypt e JWT, consulta de CNPJ e CEP com cache no MySQL, log de auditoria e atualização em tempo real com Server-Sent Events.</p>
+            <div class="tags"><span>Express</span><span>MySQL</span><span>JWT</span><span>SSE</span></div>
+            <span class="card-link">GitHub ↗</span>
+          </a>
+          <article class="card" data-reveal>
+            <p class="case-meta">Cliente · JavaScript</p>
+            <h3>Upgrades iPhone</h3>
+            <p>Gestão de uma loja de iPhones: clientes, kanban de aparelhos e follow-up. Montei a API em Express e um job que acha aparelho parado há 7+ dias e cria alerta no Google Calendar.</p>
+            <div class="tags"><span>React</span><span>Express</span><span>Docker</span><span>Google Calendar API</span></div>
+            <span class="card-link muted">Repositório privado</span>
+          </article>
+        </div>
+
+        <a class="all-repos" href="https://github.com/ZanattaDev" target="_blank" rel="noreferrer" data-reveal>
+          <span>Mais coisas no GitHub</span><span aria-hidden="true">↗</span>
+        </a>
       </div>
     </section>
 
-    <section id="services" class="section"><div class="wrap"><div class="sec-lbl">04 · Serviços</div><h2 class="sec-h">O que posso <em>construir.</em></h2><div class="services-grid rev"><div class="srv-cell"><span>01</span><h3>Desenvolvimento Web</h3><p>Sites, landing pages e interfaces rápidas, responsivas e personalizadas.</p></div><div class="srv-cell"><span>02</span><h3>Backend & APIs</h3><p>APIs, bancos de dados, autenticação e lógica de negócio.</p></div><div class="srv-cell"><span>03</span><h3>Automação</h3><p>Scripts e fluxos para reduzir tarefas manuais e ganhar produtividade.</p></div><div class="srv-cell"><span>04</span><h3>Sistemas & Integrações</h3><p>Integração de serviços, bots, servidores e ferramentas existentes.</p></div></div></div></section>
-
-    <section id="contact" class="section contact-section"><div class="wrap"><div class="sec-lbl">05 · Contato</div><div class="contact-grid rev"><div><h2 class="sec-h">Vamos fazer algo<br><em>interessante.</em></h2><p class="sec-sub">Tem uma ideia, projeto ou oportunidade? Me mande uma mensagem. Eu respondo assim que puder.</p><div class="contact-links"><a href="mailto:pedrohztt30@gmail.com">pedrohztt30@gmail.com <span>↗</span></a><a href="https://github.com/ZanattaDev" target="_blank" rel="noreferrer">github.com/ZanattaDev <span>↗</span></a><a href="https://wa.me/5548991982782" target="_blank" rel="noreferrer">WhatsApp <span>↗</span></a></div></div><form id="contact-form" class="contact-form"><label>Seu nome<input name="nome" required placeholder="Como posso te chamar?"></label><label>Email<input name="email" type="email" required placeholder="voce@email.com"></label><label>Assunto<input name="assunto" placeholder="Sobre o que vamos falar?"></label><label>Mensagem<textarea name="mensagem" required rows="5" placeholder="Conte um pouco sobre seu projeto..."></textarea></label><button type="submit" class="btn-s btn-solid">Enviar mensagem <span>→</span></button><small>Resposta normalmente por email ou WhatsApp.</small></form></div></div></section>
+    <!-- CONTATO -->
+    <section id="contact" class="section contact">
+      <div class="wrap contact-grid">
+        <div>
+          <h2 class="contact-title" data-reveal>Bora conversar?</h2>
+          <p class="sec-sub" data-reveal>Se você tem uma vaga de estágio, um sistema para fazer ou só quer trocar ideia sobre backend e Swift, me chama.</p>
+          <div class="contact-links" data-reveal>
+            <a href="mailto:pedrohztt30@gmail.com"><span>Email</span>pedrohztt30@gmail.com</a>
+            <a href="https://wa.me/5548991982782" target="_blank" rel="noreferrer"><span>WhatsApp</span>(48) 99198-2782</a>
+            <a href="https://github.com/ZanattaDev" target="_blank" rel="noreferrer"><span>GitHub</span>ZanattaDev</a>
+            <a href="https://instagram.com/pedro_zanattaa" target="_blank" rel="noreferrer"><span>Instagram</span>@pedro_zanattaa</a>
+          </div>
+        </div>
+        <form id="contact-form" class="form" data-reveal>
+          <label>Nome<input name="nome" required autocomplete="name"></label>
+          <label>Email<input name="email" type="email" required autocomplete="email"></label>
+          <label>Assunto<input name="assunto"></label>
+          <label>Mensagem<textarea name="mensagem" required rows="5"></textarea></label>
+          <button type="submit" class="btn btn-primary">Enviar</button>
+          <p class="form-status" id="form-status" role="status"></p>
+        </form>
+      </div>
+    </section>
   </main>
 
-  <footer><div class="wrap"><span>© 2026 Pedro Henrique Zanatta</span><span>Built with HTML · CSS · JS</span><a href="#home">↑ voltar ao topo</a></div></footer>
-  <script src="script.js"></script>
-  <script src="portfolio.js"></script>
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <span>© <span id="year">2026</span> Pedro Henrique Zanatta</span>
+      <a href="#home">Voltar ao topo ↑</a>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js" defer></script>
+  <script src="app.js" defer></script>
+  <script type="importmap">
+    {"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}
+  </script>
+  <script type="module" src="scene.js"></script>
 </body>
 </html>
