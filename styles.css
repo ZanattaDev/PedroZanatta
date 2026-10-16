@@ -129,6 +129,43 @@ nav{margin-left:auto}
 .facts dt{font-size:.8rem;color:var(--dim)}
 .facts dd{margin-top:.1rem;font-weight:500}
 
+/* ── Números e "por que me chamar" ── */
+.numbers{display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem;margin-top:2rem}
+.numbers div{padding:1rem .9rem;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+.numbers dt{font:700 2rem/1 var(--head);letter-spacing:-.04em;color:var(--accent)}
+.numbers dd{margin-top:.4rem;font-size:.8rem;line-height:1.35;color:var(--muted)}
+.why{margin-top:2rem}
+.why h3,.track h3{font:600 1.15rem var(--head);letter-spacing:-.015em}
+.why ul{display:grid;gap:.75rem;margin-top:.9rem}
+.why li{position:relative;padding-left:1.1rem;color:var(--muted);font-size:.97rem}
+.why li::before{content:'';position:absolute;left:0;top:.65em;width:5px;height:5px;border-radius:50%;background:var(--accent)}
+.why b{color:var(--text);font-weight:600}
+
+/* ── Formação ── */
+.track{margin-top:2.4rem}
+.track-sub{color:var(--dim);font-size:.9rem;margin-top:.2rem}
+.track ul{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-top:1rem}
+.track a{display:flex;flex-direction:column;height:100%;padding:.95rem 1rem;border:1px solid var(--line);border-radius:14px;background:var(--surface);transition:border-color .2s,transform .3s var(--ease)}
+.track a:hover{border-color:var(--accent);transform:translateY(-2px)}
+.track-tag{align-self:flex-start;font-size:.72rem;font-weight:500;padding:.15rem .5rem;border-radius:999px;background:var(--line);color:var(--muted);margin-bottom:.5rem}
+.track-tag.swift{background:var(--accent-soft);color:var(--accent)}
+.track b{font-weight:600;font-size:.95rem;line-height:1.3}
+.track-by{margin-top:.25rem;font-size:.8rem;color:var(--dim)}
+.edu-lead{margin-top:1.4rem;font-size:1.08rem;color:var(--muted);max-width:540px;padding-left:1rem;border-left:2px solid var(--accent)}
+.edu{margin-top:2.2rem;display:grid;border-top:1px solid var(--line)}
+.edu li{display:grid;grid-template-columns:110px 1fr;gap:1rem;padding:1.3rem 0;border-bottom:1px solid var(--line)}
+.edu-when{font-size:.82rem;font-weight:500;color:var(--dim);padding-top:.2rem}
+.edu-when.now{color:var(--accent)}
+.edu-when.now::before{content:'';display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--accent);margin-right:.45rem;vertical-align:1px}
+.edu h3{font:600 1.15rem/1.3 var(--head);letter-spacing:-.015em}
+.edu-where{font-size:.88rem;color:var(--dim);margin:.15rem 0 .45rem}
+.edu p:not(.edu-where){color:var(--muted);font-size:.95rem}
+.edu a{color:var(--accent);text-decoration:underline;text-underline-offset:2px}
+.certs{margin-top:2rem}
+.certs h3{font:600 1.15rem var(--head);margin-bottom:.6rem}
+.certs li{display:flex;justify-content:space-between;gap:1rem;padding:.7rem 0;border-bottom:1px solid var(--line)}
+.certs span{font-size:.88rem;color:var(--dim);text-align:right}
+
 /* ── O que faço ── */
 .focus-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:3rem}
 .panel{border:1px solid var(--line);border-radius:18px;padding:clamp(1.3rem,3vw,1.9rem);background:var(--surface);box-shadow:var(--shadow);display:flex;flex-direction:column}
@@ -235,6 +272,7 @@ a.card:hover{border-color:var(--line-2);transform:translateY(-3px)}
 .focus-grid>*,.case>*,.more-grid>*,.contact-grid>*,.about-grid>*{min-width:0}
 
 @media (max-width:980px){
+  .numbers{grid-template-columns:repeat(4,1fr)}
   .about-grid{grid-template-columns:1fr}
   .about-spacer{display:none}
   .focus-grid{grid-template-columns:1fr}
@@ -269,6 +307,10 @@ a.card:hover{border-color:var(--line-2);transform:translateY(-3px)}
   .marquee-track{font-size:2.1rem;gap:1.1rem}
 
   .about-text{font-size:1rem}
+  .edu li{grid-template-columns:1fr;gap:.35rem;padding:1.1rem 0}
+  .edu-lead{font-size:1rem}
+  .numbers{grid-template-columns:1fr 1fr}
+  .track ul{grid-template-columns:1fr}
   .facts dd{font-size:.95rem}
 
   .focus-grid{margin-top:2rem}

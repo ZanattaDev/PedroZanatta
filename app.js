@@ -151,7 +151,7 @@
       gone:  { coreX: 0,    coreY: 0,   coreScale: 0,    spread: .6,  coreTilt: .4,  ringShow: 0 }
     } : {
       hero:  { coreX: 0,    coreY: 1.6, coreScale: .62,  spread: .6,  coreTilt: .4,  ringShow: 0 },
-      about: { coreX: .9,   coreY: 3.4, coreScale: .3,   spread: .9,  coreTilt: .6,  ringShow: 0 },
+      about: { coreX: .9,   coreY: 3.4, coreScale: 0,    spread: .9,  coreTilt: .6,  ringShow: 0 },
       focus: { coreX: .9,   coreY: 3.4, coreScale: 0,    spread: .9,  coreTilt: .6,  ringShow: 0 },
       stack: { coreX: .9,   coreY: 3.4, coreScale: 0,    spread: .9,  coreTilt: .6,  ringShow: 1 },
       gone:  { coreX: 0,    coreY: 0,   coreScale: 0,    spread: .6,  coreTilt: .4,  ringShow: 0 }
